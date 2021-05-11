@@ -1,0 +1,36 @@
+{
+    "settings": {
+        "direction": "ltr",
+        "code": "pt-BR",
+        "label": "Portugues",
+        "shorthand": "br"
+    },
+    "general": {
+        "copyright": "Vien Angular © 2020 All Rights Reserved.",
+        "title": "Titulo Gen 01",
+        "body": "Conteudo do Gen 01",
+        "footer": "Rodapé do Gen",
+        "intern": "Teste via TS",
+        "button": {
+            "yes": "Sim",
+            "no": "Não",
+            "cancel": "Cancelar",
+            "save": "Salvar"
+        }
+    },
+    "user": {
+        "login-title": "Login"
+    },
+    "datatable": {
+        "nodata": "Sem dados para Listar",
+        "total": "registros totais",
+        "title": "Titulo",
+        "category": "Categoria",
+        "status": "Status",
+        "edit": "Editar",
+        "delete": "Deletar",
+        "prev": "Anterior",
+        "next": "Proximo",
+        "search": "Pesquisar"
+    }
+}

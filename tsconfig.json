@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "types": [
+      "node",
+      "googlemaps"
+    ],
+    "baseUrl": "./",
+    "outDir": "./public",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2018",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "strict": false,
+    "noImplicitReturns": false,
+  },
+  "angularCompilerOptions": {
+    "preserveWhiteSpace": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
