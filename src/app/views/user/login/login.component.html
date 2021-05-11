@@ -1,0 +1,71 @@
+<div class="card auth-card">
+  <div class="position-relative image-side ">
+    <p class=" text-white h2">WEB MONKEY BLANKS</p>
+  </div>
+  <div class="form-side">
+    <a class="c-pointer">
+      <!-- <span class="logo-single"></span> -->
+      <span>Monkey Blanks</span>
+    </a>
+    <h6 class="mb-4 my-1">Login</h6>
+    <div class="d-flex flex-column">
+      <label class="form-group has-float-label">
+        <input class="form-control" id="email" [(ngModel)]="username" (focus)="onFocus()" (keyup.enter)="onChangeFocus()"/>
+        <span>Login</span>
+        <div *ngIf="mg_erro == 'login' && loginError == true" class="invalid-tooltip">Login é obrigatório!</div>
+      </label>
+      <label class="form-group has-float-label">
+        <input class="form-control" type="password" placeholder="" id="password" (focus)="onFocus()"
+          [(ngModel)]="password" (keyup.enter)="login()" />
+        <span>Senha</span>
+        <div *ngIf="mg_erro == 'password' && loginError == true" class="invalid-tooltip">Senha é obrigatório!</div>
+      </label>
+      <!--
+    <div class="d-flex justify-content-between align-items-center">
+      <a routerLink="/user/forgot-password">{{ 'user.forgot-password' | translate }}?</a>
+    </div>
+  -->
+   <!--<button class="'btn btn-primary btn-lg btn-shadow'" (click)="onTest()">
+    TEste
+   </button> -->
+      <app-state-button [btnClass]="'btn btn-primary btn-lg btn-shadow'" [currentState]="buttonState"
+        [isDisabled]="buttonDisabled" (click)="login()">
+        {{ 'user.login-button' | translate | uppercase }}
+      </app-state-button>
+      <!--
+    <form ngFormOptions="form" novalidate>
+      <h1>Login</h1>
+      <p class="text-muted">Faça login em sua conta</p>
+      <label style="color: brown;"> {{mg_erro}}</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="icon-user"></i></span>
+        </div>
+        <input name="username" id="username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}"
+          class="form-control text-error" autocomplete="username" (keyup.enter)="onChangeFocus()"
+          placeholder="Usuário/Email" required>
+      </div>
+      <div class="input-group mb-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="icon-lock"></i></span>
+        </div>
+        <input type="password" (keyup.enter)="login()" [(ngModel)]="password" id="password" class="form-control"
+          placeholder="Senha" [ngModelOptions]="{standalone: true}" autocomplete="current-password" required>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <button type="button" name="btnlogin" class="btn btn-primary px-4 btn-block" (click)="login()">Login</button>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-success active btn-block" (click)="navRecuperarSenha()">
+            Recuperar Senha</button>
+        </div>
+        <div class="col-6 text-right">
+        </div>
+      </div>
+    </form>
+-->
+
+    </div>
+  </div>
+</div>

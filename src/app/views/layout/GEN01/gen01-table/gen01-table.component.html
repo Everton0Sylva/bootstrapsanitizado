@@ -1,0 +1,63 @@
+<div class="card card-body">
+    <div class="row">
+        <div class="col-12">
+            <div class="card-header mb-2">
+                <label>{{'datatable.listof' | translate}} {{'datatable.title' | translate}}</label>
+                <button type="button" class="btn btn-primary float-right font-weight-bold"
+                    (click)="onNew()">{{'datatable.new' | translate}}</button>
+            </div>
+
+            <div class=" col-2 ml-auto">
+                <div class="d-inline-block">
+                    <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
+                        <input class="form-control" placeholder="{{'datatable.search' | translate }}"
+                            (keyup)="updateFilter($event)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 data-table-rows data-table-responsive">
+                <ngx-datatable #gtNgxTable class="bootstrap2 expandable" [columnMode]="'force'" [footerHeight]="80"
+                    [rowHeight]="'auto'" [limit]="10" [rows]='dataRowsFilter' [headerHeight]="20"
+                    [loadingIndicator]="true">
+                    <ngx-datatable-column [resizeable]="false" name="enabled" [maxWidth]="50"
+                        name="{{'datatable.title' | translate }}" prop="id">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                            <span></span>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column [resizeable]="false" name="{{'datatable.title' | translate }}" prop="title">
+                    </ngx-datatable-column>
+                    <ngx-datatable-column [resizeable]="false" name="{{'datatable.category' | translate }}"
+                        prop="category">
+                    </ngx-datatable-column>
+                    <ngx-datatable-column [resizeable]="false" name="{{'datatable.status' | translate }}" prop="status">
+                    </ngx-datatable-column>
+                    <ngx-datatable-column [resizeable]="false" name="enabled" [maxWidth]="90">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                            <span>{{'datatable.edit' | translate }}</span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+                            <button type="button" class="btn btn-primary default" (click)="create()">{{'datatable.edit'
+                                |
+                                translate
+                                }}</button>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column [resizeable]="false" name="enabled" [maxWidth]="120">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                            <span>{{'datatable.delete' | translate }}</span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+                            <button type="button" class="btn btn-secondary default"
+                                (click)="create()">{{'datatable.delete'
+                                |
+                                translate
+                                }}</button>
+                        </ng-template>
+                    </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </div>
+    </div>
+</div>

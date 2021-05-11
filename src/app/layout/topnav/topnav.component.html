@@ -1,0 +1,66 @@
+<nav class="navbar fixed-top p-0">
+  <div class="d-flex align-items-center navbar-left">
+    <a (click)="menuButtonClick($event, sidebar.menuClickCount, sidebar.containerClassnames); false;"
+      href="javascript:;" class="menu-button d-none d-md-block">
+      <svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
+        <rect x="0.48" y="0.5" width="7" height="1" />
+        <rect x="0.48" y="7.5" width="7" height="1" />
+        <rect x="0.48" y="15.5" width="7" height="1" />
+      </svg> {{" "}}
+      <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
+        <rect x="1.56" y="0.5" width="16" height="1" />
+        <rect x="1.56" y="7.5" width="16" height="1" />
+        <rect x="1.56" y="15.5" width="16" height="1" />
+      </svg>
+    </a>
+
+    <a (click)="mobileMenuButtonClick($event, sidebar.containerClassnames)" href="javascript:;"
+      class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+        <rect x="0.5" y="0.5" width="25" height="1" />
+        <rect x="0.5" y="7.5" width="25" height="1" />
+        <rect x="0.5" y="15.5" width="25" height="1" />
+      </svg>
+    </a>
+
+    <!-- <a class="btn btn-sm btn-outline-primary ml-2 d-none d-xl-inline-block" href="javascript:;">&nbsp;BUY&nbsp;</a> -->
+  </div>
+
+
+  <div class="navbar-logo mt-0 pt-0">
+    <img *ngIf="isDarkModeActive" src="/assets/img/logo.jpg" style=" height: 5rem; width: 14rem;">
+    <img *ngIf="!isDarkModeActive" src="/assets/img/logoBlack.jpg" style="height: 5rem; width: 14rem;">
+    <!-- <span class="logo d-none d-xs-block"></span>
+    <span class="logo-mobile d-block d-xs-none"></span> -->
+  </div>
+
+  <div class="navbar-right d-flex align-items-center justify-content-end">
+    <div class="header-icons d-inline-block align-middle">
+
+      <div class="d-none d-md-inline-block align-text-bottom mr-1">
+        <div class="custom-control custom-switch" tooltip="Dark Mode" placement="left">
+          <input type="checkbox" class="custom-control-input" id="darkModeSwitch" [checked]="isDarkModeActive"
+            (change)="onDarkModeChange($event)">
+          <label class="custom-control-label" for="darkModeSwitch"></label>
+        </div>
+      </div>
+
+    </div>
+    <div class="d-inline-block">
+      <div class="name text-wrap text-right" style="width: 350px;">{{displayName}}</div>
+    </div>
+
+    <div class="user d-inline-block ml-1" dropdown>
+      <button class="btn btn-empty p-0" type="button" dropdownToggle>
+        <span>
+          <img alt="Profile" id="sysAvatar" [ngStyle]="{'border-color': themeColor}" src="/assets/img/avatar.jpg" />
+        </span>
+      </button>
+
+      <div class="dropdown-menu dropdown-menu-right mt-1" *dropdownMenu role="menu">
+        <a class="dropdown-item c-pointer" (click)="onSignOut()">Sair (Log-out)</a>
+      </div>
+    </div>
+
+  </div>
+</nav>

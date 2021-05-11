@@ -1,19 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ToasterConfig } from "angular2-toaster";
+import { Subscription } from 'rxjs';
+import { IMenuItem } from '../constants/_nav';
+import { menuMain } from '../constants/_nav-Main';
+import { ISidebar, SidebarService } from '../layout/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-views',
   templateUrl: './views.component.html'
 })
+
 export class ViewsComponent implements OnInit {
 
-  constructor(private router: Router) {
-    // If you have landing page, remove below line and implement it here.
-    this.router.navigateByUrl('/app');
-  }
+  public toasterconfig: ToasterConfig =
+    new ToasterConfig({
+      //showCloseButton: true, 
+      positionClass: 'toast-top-center',
+      tapToDismiss: true,
+      timeout: 10000
+    });
 
-  ngOnInit() {
+    public menuItems: IMenuItem[];
 
-  }
+
+    sidebar: ISidebar;
+    subscription: Subscription;
+    constructor(private sidebarService: SidebarService) {
+      // this.router.navigateByUrl('/app');
+    }
+    
+    ngOnInit() {
+      this.subscription = this.sidebarService.getSidebar().subscribe(
+        res => {
+          this.sidebar = res;
+        },
+        err => {
+          console.error(`An error occurred: ${err.message}`);
+        }
+      );
+  
+      this.menuItems = menuMain;
+    }
+  
+    ngOnDestroy(): void {
+      this.subscription.unsubscribe();
+    }
+  
 
 }

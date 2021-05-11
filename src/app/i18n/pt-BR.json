@@ -24,6 +24,7 @@
     "datatable": {
         "nodata": "Sem dados para Listar",
         "total": "registros totais",
+        "listof": "Listagem de ",
         "title": "Titulo",
         "category": "Categoria",
         "status": "Status",
@@ -31,6 +32,7 @@
         "delete": "Deletar",
         "prev": "Anterior",
         "next": "Proximo",
-        "search": "Pesquisar"
+        "search": "Pesquisar",
+        "new": "Novo"
     }
 }

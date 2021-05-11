@@ -1,5 +1,4 @@
 import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
-import { LangService } from './shared/lang.service';
 import { environment } from '../environments/environment';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';

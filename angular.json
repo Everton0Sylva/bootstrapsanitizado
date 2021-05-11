@@ -43,7 +43,6 @@
               "./node_modules/ngx-lightbox/lightbox.css",
               "./node_modules/video.js/dist/video-js.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css",
               {
                 "input": "src/assets/css/sass/themes/vien.light.blueyale.scss",
                 "bundleName": "light.blue.yale",
@@ -145,7 +144,7 @@
                 "inject": false
               }
             ],
-            "scripts": [ 
+            "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/jszip/dist/jszip.js"

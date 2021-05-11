@@ -5,15 +5,16 @@ import { ErrorComponent } from './error/error.component';
 
 let routes: Routes = [
   {
-    path: '',
+    path: 'web',
     component: ViewsComponent,
-    pathMatch: 'full'
-  }, 
-  {
-    path: 'gen01', loadChildren: () => import('./GEN01/gen01.module').then(m => m.Gen01Module)
+    children: [
+      { path: '', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) },
+    ]
   },
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
   { path: 'error', component: ErrorComponent },
-  { path: '**', redirectTo: '/gen01' }
+  { path: '404', redirectTo: '/user/login' },
+  { path: '**', redirectTo: '/web/home' }
 ];
 
 @NgModule({

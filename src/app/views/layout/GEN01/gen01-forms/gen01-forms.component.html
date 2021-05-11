@@ -1,0 +1,27 @@
+<form [formGroup]="formulario">
+    <div class="card">
+        <div class="card-header">
+            <label>{{'general.title' | translate}}</label>
+            <button type="button" class="btn btn-sm btn-danger float-right font-weight-bold"
+                (click)="cancelar()">X</button>
+        </div>
+
+        <div class="card-body">
+            <app-king-b-text (textEvent)="validate($event)" [name]="'text'" [label]="'Texto'" [error]="'Texto é'"
+                [form]="formulario" [prefix]="'#'" [icon]="'fas fa-hashtag'">
+            </app-king-b-text>
+        </div>
+        <div class="card-footer">
+            <div class="float-right">
+                <button type="button" class="btn btn-outline-secondary" (click)="create()">{{'general.button.cancel'
+                    |
+                    translate
+                    }}</button>
+                <button type="button" class="btn btn-outline-primary ml-2" (click)="cancelar()">{{'general.button.save'
+                    |
+                    translate
+                    }}</button>
+            </div>
+        </div>
+    </div>
+</form>
