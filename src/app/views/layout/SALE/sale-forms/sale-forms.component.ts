@@ -6,6 +6,7 @@ Contato:gleisonnanet@gmail.com
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { environment } from 'src/environments/environment';
+import { Sale } from '../class/sale';
 import { SaleScreemService } from '../class/sale-screem.service';
 import { SaleService } from '../class/sale.service';
 
@@ -44,8 +45,9 @@ export class SaleFormsComponent implements OnInit {
 	ngOnInit(): void {
 		this.createForm();
 		let data = this.saleScreemService.getform();
-		if (data != null && data != undefined && Object.values(data).length > 0) {
+		if (data != null && data != undefined && Object.values(data).length > 0) {			
 			this.formulario.setValue(data);
+			debugger
 		}
 		this.saleScreemService.setform({});
 	}
@@ -67,6 +69,7 @@ export class SaleFormsComponent implements OnInit {
 
 	}
 	validate(evento) {
+
 		this.formulario.get(evento.currentTarget.type).setErrors({ valid: false });
 		this.formulario.get(evento.currentTarget.type).setValue(evento.target.value);
 	}
@@ -81,8 +84,11 @@ export class SaleFormsComponent implements OnInit {
 		this.formulario.get(longitude).setValue(evento.longitude);
 	}
 	create() {
-		debugger
-		this.saleService.create(this.formulario.value).then((data) => {
+		let body: Sale = new Sale();
+		body.gen01seller_id = 'id: ' + this.formulario.value.gen01seller_id;
+		body.gen01product_id = 'id: ' + this.formulario.value.gen01product_id;
+		body.quantity = this.formulario.value.quantity;
+		this.saleService.create(body).then((data) => {
 			debugger
 			this.enviaStatusTela();
 		});

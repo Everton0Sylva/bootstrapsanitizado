@@ -43,7 +43,7 @@
                             <span>{{'datatable.edit' | translate }}</span>
                         </ng-template>
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
-                            <button type="button" class="btn btn-primary default" (click)="create()">{{'datatable.edit'
+                            <button type="button" class="btn btn-primary default" (click)="show(row)">{{'datatable.edit'
                                 |
                                 translate
                                 }}</button>
@@ -54,7 +54,7 @@
                             <span>{{'datatable.delete' | translate }}</span>
                         </ng-template>
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
-                            <button type="button" class="btn btn-danger default" (click)="create()">{{'datatable.delete'
+                            <button type="button" class="btn btn-danger default" (click)="deleteDialog(row)">{{'datatable.delete'
                                 |
                                 translate
                                 }}</button>

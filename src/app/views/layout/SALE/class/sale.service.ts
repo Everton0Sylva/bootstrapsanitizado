@@ -29,7 +29,7 @@ export class SaleService {
   }
 
   create(body: Sale) {
-    const url = `${environment.url}` + '/gen01/api/v1/';
+    const url = `${environment.url}` + '/api/mandra/sale/';
     return new Promise((resolve, reject) => {
       this._httpClient.post(url, body)
         .toPromise().then(res => {
@@ -45,7 +45,7 @@ export class SaleService {
 
   update(body: Sale) {
 
-    const url = `${environment.url}` + '/gen01/api/v1/' + body.id + '/';
+    const url = `${environment.url}` + '/api/mandra/sale/' + body.id + '/';
     return new Promise((resolve, reject) => {
       this._httpClient.put(url, body)
         .toPromise()
@@ -55,7 +55,7 @@ export class SaleService {
   }
 
   delete(body: Sale) {
-    const url = `${environment.url}` + '/gen01/api/v1/' + body.id + '/';
+    const url = `${environment.url}` + '/api/mandra/sale/' + body.id + '/';
     return new Promise((resolve, reject) => {
       this._httpClient.delete(url)
         .toPromise()
@@ -71,7 +71,7 @@ export class SaleService {
 
   datatables() {
 
-    const url = `${environment.url}` + '/gen01/api/v1/?format=datatables';
+    const url = `${environment.url}` + '/api/mandra/sale/?format=datatables';
     return new Promise((resolve, reject) => {
       this._httpClient.get<any>(url)
         .toPromise().then(res => {
@@ -85,7 +85,7 @@ export class SaleService {
 
   getdatatable(sort: string, order: string, page: number, search: any): Observable<SaleArrayInterface> {
     const href = environment.url
-    const requestUrl = `${href}/gen01/api/v1/?search=${search}&ordering=${order}&page=${page + 1}`;
+    const requestUrl = `${href}/api/mandra/sale/?search=${search}&ordering=${order}&page=${page + 1}`;
     return this._httpClient.get<SaleArrayInterface>(requestUrl);
   }
 }
@@ -94,7 +94,7 @@ export class SaleHttpDatatable {
   constructor(private _httpClient: HttpClient) { }
   getdatatable(sort: string, order: string, page: number, search: any): Observable<SaleArrayInterface> {
     const href = environment.url
-    const requestUrl = `${href}/gen01/api/v1/?search=${search}&ordering=${order}&page=${page + 1}`;
+    const requestUrl = `${href}/api/mandra/sale/?search=${search}&ordering=${order}&page=${page + 1}`;
     return this._httpClient.get<SaleArrayInterface>(requestUrl);
   }
 }

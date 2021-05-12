@@ -16,10 +16,10 @@ import { SaleScreemService } from './class/sale-screem.service';
 export class SaleComponent implements OnInit {
 	@Input() tela = 0;
 	progress: boolean = false;
-	constructor(private gen01ScreemService: SaleScreemService,) { }
+	constructor(private saleScreemService: SaleScreemService,) { }
 
 	changeTela(value: any) {
-		this.tela = Number(this.gen01ScreemService.getscreem());
+		this.tela = Number(this.saleScreemService.getscreem());
 	}
 	ngOnInit(): void {
 		// debugger

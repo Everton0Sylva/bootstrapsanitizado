@@ -66,11 +66,6 @@ export class SaleTableComponent implements OnInit, AfterViewInit {
         this.dataRows = this.dataRowsFilter = []
     }
 
-    create() {
-        debugger
-    }
-
-
     createForm() {
         this.formsearch = this._FormBuilder.group({
             'inputsearch': [null, Validators.required],

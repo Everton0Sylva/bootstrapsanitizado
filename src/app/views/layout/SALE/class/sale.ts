@@ -3,8 +3,8 @@ export interface SaleInterface {
 	created?: string;
 	updated?: string;
 	quantity?: string;
-	gen01seller_id?: number;
-	gen01product_id?: number;
+	gen01seller_id?: any;
+	gen01product_id?: any;
 
 }
 export interface SaleArrayInterface {
@@ -17,6 +17,6 @@ export class Sale implements SaleInterface {
 	created?: string;
 	updated?: string;
 	quantity?: string;
-	gen01seller_id?: number;
-	gen01product_id?: number;
+	gen01seller_id?: any;
+	gen01product_id?: any;
 }

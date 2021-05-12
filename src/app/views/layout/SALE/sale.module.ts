@@ -15,10 +15,10 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SaleTableComponent } from './gen01-table/sale-table.component';
 import { SaleFormsComponent } from './sale-forms/sale-forms.component';
 import { SaleRoutingModule } from './sale.routing.module';
 import { SaleComponent } from './sale.component';
+import { SaleTableComponent } from './sale-table/sale-table.component';
 
 @NgModule({
   declarations: [DebugComponent, SaleComponent, SaleFormsComponent, SaleTableComponent],
