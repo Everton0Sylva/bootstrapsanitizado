@@ -4,19 +4,18 @@ Author : Gleison de souza luiz
 Contato:gleisonnanet@gmail.com
 */
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { Gen01ScreemService } from '../class/gen01-screem.service';
-import { Gen01Service } from '../class/gen01.service';
-
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { environment } from 'src/environments/environment';
+import { SaleScreemService } from '../class/sale-screem.service';
+import { SaleService } from '../class/sale.service';
 
 @Component({
-	selector: 'app-gen01-forms',
-	templateUrl: 'gen01-forms.component.html',
+	selector: 'app-sale-forms',
+	templateUrl: 'sale-forms.component.html',
 	encapsulation: ViewEncapsulation.None
 })
 
-export class Gen01FormsComponent implements OnInit {
+export class SaleFormsComponent implements OnInit {
 	@Input() tela: Number;
 	@Input() progress: boolean;
 	@Output() telaFormEvent = new EventEmitter();
@@ -26,8 +25,8 @@ export class Gen01FormsComponent implements OnInit {
 	environment = environment;
 	formulario: FormGroup;
 	constructor(
-		private gen01Service: Gen01Service,
-		private gen01ScreemService: Gen01ScreemService,
+		private saleService: SaleService,
+		private saleScreemService: SaleScreemService,
 		public _FormBuilder: FormBuilder) { }
 
 	eventoCheckGroup(d) { this.items = d }
@@ -36,7 +35,7 @@ export class Gen01FormsComponent implements OnInit {
 
 
 	enviaStatusTela() {
-		this.gen01ScreemService.changetable()
+		this.saleScreemService.changetable()
 		this.telaFormEvent.emit(this.tela);
 
 
@@ -44,32 +43,27 @@ export class Gen01FormsComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.createForm();
-		let data = this.gen01ScreemService.getform();
+		let data = this.saleScreemService.getform();
 		if (data != null && data != undefined && Object.values(data).length > 0) {
 			this.formulario.setValue(data);
 		}
-		this.gen01ScreemService.setform({});
+		this.saleScreemService.setform({});
 	}
 
 	createForm() {
 		this.formulario = this._FormBuilder.group({
-			'checkgroup': [null, Validators.required],
-			'checkbox': [null, Validators.required],
-			'consulta': [null, Validators.required],
-			'datetime': [null, Validators.required],
-			'list': [null, Validators.required],
-			'select': [null, Validators.required],
-			'time': [null, Validators.required],
-			'date': [null, Validators.required],
-			'image': [null, Validators.required],
-			'email': [null, [Validators.required, Validators.email]],
-			'number': [null, Validators.required],
-			'money': [null, Validators.required],
-			'textarea': [null, Validators.required],
-			'passwd': [null, Validators.required],
-			'text': [null, Validators.required],
-			'phone': [null, Validators.required],
+			'gen01seller_id': [null, Validators.required],
+			'quantity': [null, Validators.required],
+			'gen01product_id': [null, Validators.required],
 		});
+		/*
+				id?: number;
+			created?: string;
+			updated?: string;
+			quantity?: string;
+			gen01seller_id?: number;
+			gen01product_id?: number;
+			*/
 
 	}
 	validate(evento) {
@@ -87,19 +81,21 @@ export class Gen01FormsComponent implements OnInit {
 		this.formulario.get(longitude).setValue(evento.longitude);
 	}
 	create() {
-		this.gen01Service.create(this.formulario.value).then((data) => {
+		debugger
+		this.saleService.create(this.formulario.value).then((data) => {
+			debugger
 			this.enviaStatusTela();
 		});
 	}
 
 	update() {
-		this.gen01Service.update(this.formulario.value).then((data) => {
+		this.saleService.update(this.formulario.value).then((data) => {
 			this.enviaStatusTela();
-			this.gen01ScreemService.setform({})
+			this.saleScreemService.setform({})
 		});
 	}
 	cancelar() {
-		this.gen01ScreemService.changetable;
+		this.saleScreemService.changetable;
 		this.enviaStatusTela();
 	}
 

@@ -26,12 +26,17 @@
                             <span></span>
                         </ng-template>
                     </ngx-datatable-column>
-                    <ngx-datatable-column [resizeable]="false" name="{{'datatable.title' | translate }}" prop="title">
+                    <ngx-datatable-column [resizeable]="true" name="{{'sale.seller' | translate }}"
+                        prop="gen01seller.name">
                     </ngx-datatable-column>
-                    <ngx-datatable-column [resizeable]="false" name="{{'datatable.category' | translate }}"
-                        prop="category">
+                    <ngx-datatable-column [resizeable]="true" name="{{'sale.telephone' | translate }}"
+                        prop="gen01seller.telephone">
                     </ngx-datatable-column>
-                    <ngx-datatable-column [resizeable]="false" name="{{'datatable.status' | translate }}" prop="status">
+                    <ngx-datatable-column [resizeable]="true" name="{{'sale.email' | translate }}"
+                        prop="gen01seller.Email">
+                    </ngx-datatable-column>
+                    <ngx-datatable-column [resizeable]="true" name="{{'sale.quantity' | translate }}"
+                        prop="quantity">
                     </ngx-datatable-column>
                     <ngx-datatable-column [resizeable]="false" name="enabled" [maxWidth]="90">
                         <ng-template let-column="column" ngx-datatable-header-template>
@@ -49,8 +54,7 @@
                             <span>{{'datatable.delete' | translate }}</span>
                         </ng-template>
                         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
-                            <button type="button" class="btn btn-secondary default"
-                                (click)="create()">{{'datatable.delete'
+                            <button type="button" class="btn btn-danger default" (click)="create()">{{'datatable.delete'
                                 |
                                 translate
                                 }}</button>

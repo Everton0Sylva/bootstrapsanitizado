@@ -6,40 +6,42 @@ Contato:gleisonnanet@gmail.com
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Gen01HttpDatatable } from '../class/gen01.service';
-import { Gen01, Gen01Interface } from '../class/gen01';
-import { Gen01ScreemService } from '../class/gen01-screem.service';
-import { Gen01Service } from '../class/gen01.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ColumnMode, DatatableComponent, SelectionType } from '@swimlane/ngx-datatable';
+import { Sale, SaleInterface } from '../class/sale';
+import { SaleHttpDatatable, SaleService } from '../class/sale.service';
+import { SaleScreemService } from '../class/sale-screem.service';
 
 
 
 @Component({
-    selector: 'app-gen01-table',
-    templateUrl: 'gen01-table.component.html',
+    selector: 'app-sale-table',
+    templateUrl: 'sale-table.component.html',
     encapsulation: ViewEncapsulation.None,
 })
 
-export class Gen01TableComponent implements OnInit, AfterViewInit {
+export class SaleTableComponent implements OnInit, AfterViewInit {
     @ViewChild('gtNgxTable') table: any;
     @Input() tela: number;
 
     @Output() telaTableEvent = new EventEmitter();
 
-    Gen01: Gen01;
+    sale: Sale;
     inputsearch: String = '';
     formsearch: FormGroup;
 
     displayedColumns: String[] = [
-        "title",
-        "category",
-        "status"];
+        "id",
+        "Vendedor",
+        "Email",
+        "Telefone",
+        "Quantidade"
+    ]
 
     durationInSeconds = 5;
     resultsLength = 0;
-    DatabaseServer: Gen01HttpDatatable | null;
-    data: Gen01Interface[] = [];
+    DatabaseServer: SaleHttpDatatable | null;
+    data: SaleInterface[] = [];
     isLoadingResults = true;
     isRateLimitReached = false;
 
@@ -47,21 +49,21 @@ export class Gen01TableComponent implements OnInit, AfterViewInit {
     public dataRowsFilter = []
 
     enviaStatusTela() {
-        this.Gen01ScreemService.changeform()
+        this.saleScreemService.changeform()
 
         this.telaTableEvent.emit(this.tela);
 
     }
-    constructor(private Gen01ScreemService: Gen01ScreemService, private _httpClient: HttpClient,
+    constructor(private saleScreemService: SaleScreemService, private _httpClient: HttpClient,
         public _FormBuilder: FormBuilder,
         //   private Showalert: AlertService,
-        private Gen01Service: Gen01Service, private translateService: TranslateService
+        private saleService: SaleService, private translateService: TranslateService
     ) {
     }
 
 
     ngOnInit(): void {
-        this.dataRows = this.dataRowsFilter = this.itens
+        this.dataRows = this.dataRowsFilter = []
     }
 
     create() {
@@ -75,13 +77,22 @@ export class Gen01TableComponent implements OnInit, AfterViewInit {
         });
     }
 
-    show(obj: Gen01) {
-        this.Gen01ScreemService.setform(obj)
-        this.Gen01ScreemService.changeform();
+    show(obj: Sale) {
+        this.saleScreemService.setform(obj)
+        this.saleScreemService.changeform();
         this.telaTableEvent.emit(this.tela);
     }
 
     ngAfterViewInit() {
+        let self = this;
+        this.saleService.genericGet('/api/mandra/sale/')
+            .then((data: any) => {
+                if (Array.isArray(data)) {
+                    this.dataRows = this.dataRowsFilter = data;
+                }
+            }).catch((error: any) => {
+                console.log(error);
+            })
     }
 
 
@@ -101,8 +112,8 @@ export class Gen01TableComponent implements OnInit, AfterViewInit {
     }
 
 
-    delete(obj: Gen01) {
-        this.Gen01Service.delete(obj);
+    delete(obj: Sale) {
+        this.saleService.delete(obj);
         setTimeout(() => {
             this.ngAfterViewInit()
         }, 500);
@@ -274,9 +285,9 @@ export class Gen01TableComponent implements OnInit, AfterViewInit {
 
 
     onNew() {
-        this.Gen01 = new Gen01();
+        this.sale = new Sale();
         this.enviaStatusTela();
-        this.Gen01ScreemService.changeform();
+        this.saleScreemService.changeform();
         this.telaTableEvent.emit(this.tela);
     }
 

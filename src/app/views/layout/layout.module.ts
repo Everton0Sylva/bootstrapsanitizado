@@ -9,16 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { LayoutContainersModule } from 'src/app/layout/layout.containers.module';
 import { HttpRequestService } from 'src/app/auth/http-request.service';
-import { OAuth2Response } from 'src/app/auth/OAuth2Response';
 import { HttpsRequestInterceptor } from 'src/app/auth/interceptor.module';
 import { NgxMaskModule } from 'ngx-mask'
 import { LayoutComponent } from './layout.component';
-import { Gen01Module } from './GEN01/gen01.module';
 import { LayoutRoutingModule } from './layout.routing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { SaleModule } from './SALE/sale.module';
 
 @NgModule({
   imports: [
@@ -33,7 +31,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     TooltipModule.forRoot(),
     NgxMaskModule.forRoot(),
     TranslateModule,
-    LayoutContainersModule,
     NgxDatatableModule.forRoot({
       messages: {
         emptyMessage: "Sem dados para Listar",
@@ -41,7 +38,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
         selectedMessage: ""
       }
     }),
-    Gen01Module
+    SaleModule
   ],
   declarations: [
     LayoutComponent,
@@ -53,7 +50,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     HttpRequestService,
     ToasterService,
     FormBuilder,
-    OAuth2Response,
     HttpsRequestInterceptor
   ],
 })

@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SidebarService, ISidebar } from '../sidebar/sidebar.service';
 import { Router } from '@angular/router';
-import { LangService, Language } from 'src/app/shared/lang.service';
 import { environment } from 'src/environments/environment';
 import { Colors } from 'src/app/constants/colors.service';
 import { HttpRequestService } from 'src/app/auth/http-request.service';
@@ -16,7 +15,6 @@ export class TopnavComponent implements OnInit, OnDestroy {
   sidebar: ISidebar;
   subscription: Subscription;
   displayName = 'Sistema Nf-e Teste';
-  languages: Language[];
   currentLanguage: string;
   isSingleLang;
   isFullScreen = false;
@@ -105,7 +103,7 @@ export class TopnavComponent implements OnInit, OnDestroy {
         this.router.navigate(['/']);
       });
       */
-  //  this.oauth2request.logout();
+   this.oauth2request.logout();
   }
 
   searchKeyUp(event: KeyboardEvent) {

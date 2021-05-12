@@ -35,7 +35,7 @@ export class ApiServiceAdmActiveUser {
   constructor(private http: HttpClient) { }
 
   getActiveUser(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/AdmActiveUser/api/v1/AdmActiveUser/?format=datatables';
+    const url = environment.urlAdmin + '/AdmActiveUser/api/v1/AdmActiveUser/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

@@ -33,7 +33,7 @@ export class ApiServiceCliUserBlocked {
   constructor(private http: HttpClient) { }
 
   getUserBlocked(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/CliUserBlocked/api/v1/CliUserBlocked/?format=datatables';
+    const url = environment.urlAdmin + '/CliUserBlocked/api/v1/CliUserBlocked/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

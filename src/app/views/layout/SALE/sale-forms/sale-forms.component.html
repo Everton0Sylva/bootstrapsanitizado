@@ -7,9 +7,20 @@
         </div>
 
         <div class="card-body">
-            <app-king-b-text (textEvent)="validate($event)" [name]="'text'" [label]="'Texto'" [error]="'Texto é'"
-                [form]="formulario" [prefix]="'#'" [icon]="'fas fa-hashtag'">
+            <app-king-b-text (textEvent)="validate($event)" [name]="'gen01product_id'" [label]="'Produto'" [error]="'Produto é'"
+                [form]="formulario" [prefix]="" [icon]="'fas fa-hashtag'">
             </app-king-b-text>
+
+
+            <app-king-b-text (textEvent)="validate($event)" [name]="'gen01seller_id'" [label]="'Vendedor'"
+                [error]="'Vendedor é'" [form]="formulario" [prefix]="" [icon]="'fas fa-hashtag'">
+            </app-king-b-text>
+
+
+            <app-king-b-text (textEvent)="validate($event)" [name]="'quantity'" [label]="'Quantidade'"
+                [error]="'Quantidade é'" [form]="formulario" [prefix]="" [icon]="'fas fa-hashtag'">
+            </app-king-b-text>
+
         </div>
         <div class="card-footer">
             <div class="float-right">

@@ -11,8 +11,7 @@ import pt from 'src/app/i18n/pt-BR.json';
 
 @Injectable()
 export class AppComponent implements OnInit, AfterViewInit {
-  isMultiColorActive = environment.isMultiColorActive;
-  constructor( private translateService: TranslateService, private renderer: Renderer2) {
+  constructor(private translateService: TranslateService, private renderer: Renderer2) {
 
   }
 
@@ -20,8 +19,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.translateService.setTranslation('pt-BR', pt);
     this.translateService.setDefaultLang('pt-BR');
     this.translateService.use('pt-BR');
-  }
 
+    let theme = localStorage.getItem('vien-themecolor')
+    
+  }
+  //vien-themecolor
   ngAfterViewInit() {
     setTimeout(() => {
       this.renderer.addClass(document.body, 'show');

@@ -61,9 +61,9 @@ export class ApiServiceCliIndicator {
     let dataserver: IindDataserver;
     let url: any;
 
-    url = environment.apiUrl + '/cakes/paging';
-    // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-    //const url = environment.apiUrlAdmin + '/CliIndicator/api/v1/CliIndicator/?format=datatables';
+    url = environment.url + '/cakes/paging';
+    // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+    //const url = environment.urlAdmin + '/CliIndicator/api/v1/CliIndicator/?format=datatables';
 
     if (pNameIndicator === 'Inactive Clients') {
       dataserver = {

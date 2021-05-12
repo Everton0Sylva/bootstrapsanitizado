@@ -10,7 +10,7 @@ if (environment.production) {
 
 
 const color =
-  (environment.isMultiColorActive || environment.isDarkSwitchActive) && localStorage.getItem(environment.themeColorStorageKey)
+  ( environment.isDarkSwitchActive) && localStorage.getItem(environment.themeColorStorageKey)
     ? localStorage.getItem(environment.themeColorStorageKey)
     : environment.defaultColor;
 

@@ -37,7 +37,7 @@ export class ApiServiceAdmConsumerBlock {
   constructor(private http: HttpClient) { }
 
   getConsumerBlock(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/AdmConsumerBlock/api/v1/AdmConsumerBlock/?format=datatables';
+    const url = environment.urlAdmin + '/AdmConsumerBlock/api/v1/AdmConsumerBlock/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

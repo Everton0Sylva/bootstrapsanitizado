@@ -1,16 +1,17 @@
 <div class="card auth-card">
   <div class="position-relative image-side ">
-    <p class=" text-white h2">WEB MONKEY BLANKS</p>
+    <p class=" text-white h2">BOOTSTRAP MANDRA</p>
   </div>
   <div class="form-side">
     <a class="c-pointer">
       <!-- <span class="logo-single"></span> -->
-      <span>Monkey Blanks</span>
+      <span>Bootstrap</span>
     </a>
     <h6 class="mb-4 my-1">Login</h6>
     <div class="d-flex flex-column">
       <label class="form-group has-float-label">
-        <input class="form-control" id="email" [(ngModel)]="username" (focus)="onFocus()" (keyup.enter)="onChangeFocus()"/>
+        <input class="form-control" id="email" [(ngModel)]="username" (focus)="onFocus()"
+          (keyup.enter)="onChangeFocus()" />
         <span>Login</span>
         <div *ngIf="mg_erro == 'login' && loginError == true" class="invalid-tooltip">Login é obrigatório!</div>
       </label>
@@ -25,7 +26,7 @@
       <a routerLink="/user/forgot-password">{{ 'user.forgot-password' | translate }}?</a>
     </div>
   -->
-   <!--<button class="'btn btn-primary btn-lg btn-shadow'" (click)="onTest()">
+      <!--<button class="'btn btn-primary btn-lg btn-shadow'" (click)="onTest()">
     TEste
    </button> -->
       <app-state-button [btnClass]="'btn btn-primary btn-lg btn-shadow'" [currentState]="buttonState"

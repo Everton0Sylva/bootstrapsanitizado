@@ -1,0 +1,5 @@
+<div class="col-12">
+    <app-sale-forms [tela]="tela" *ngIf="tela == 1" (telaFormEvent)="changeTela($event)">
+    </app-sale-forms>
+    <app-sale-table [tela]="tela" *ngIf="tela == 0" (telaTableEvent)="changeTela($event)"></app-sale-table>
+</div>

@@ -8,10 +8,10 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: '', loadChildren: () => import('./GEN01/gen01.module').then(m => m.Gen01Module)
+        path: '', loadChildren: () => import('./SALE/sale.module').then(m => m.SaleModule)
       },
     ]
-  }
+  },
 ];
 
 @NgModule({

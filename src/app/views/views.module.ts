@@ -11,11 +11,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LayoutContainersModule } from '../layout/layout.containers.module';
-import { Gen01Module } from './layout/GEN01/gen01.module';
 import { LayoutRoutingModule } from './layout/layout.routing';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ToasterModule } from 'angular2-toaster';
 import { NgxMaskModule } from 'ngx-mask'
+import { SaleModule } from './layout/SALE/sale.module';
 
 @NgModule({
  declarations: [ViewsComponent,
@@ -36,7 +36,7 @@ import { NgxMaskModule } from 'ngx-mask'
     TooltipModule.forRoot(),
     NgxMaskModule.forRoot(),
     LayoutContainersModule,
-    Gen01Module
+    SaleModule
   ],
   exports: []
 })

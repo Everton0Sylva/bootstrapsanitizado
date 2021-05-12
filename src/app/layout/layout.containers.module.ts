@@ -6,7 +6,6 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
-import { ColorSwitcherComponent } from './color-switcher/color-switcher.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -20,7 +19,6 @@ import { FormsModule } from '@angular/forms';
     TopnavComponent,
     SidebarComponent,
     BreadcrumbComponent,
-    ColorSwitcherComponent,
     FooterComponent,
     HeadingComponent,
     ApplicationMenuComponent
@@ -39,7 +37,6 @@ import { FormsModule } from '@angular/forms';
     TopnavComponent,
     SidebarComponent,
     BreadcrumbComponent,
-    ColorSwitcherComponent,
     FooterComponent,
     HeadingComponent,
     ApplicationMenuComponent

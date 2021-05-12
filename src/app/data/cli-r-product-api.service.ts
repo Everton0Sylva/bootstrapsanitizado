@@ -34,7 +34,7 @@ export class ApiServiceCliProducts {
   constructor(private http: HttpClient) { }
 
   getProducts(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+    const url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

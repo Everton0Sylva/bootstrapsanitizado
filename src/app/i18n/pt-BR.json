@@ -5,6 +5,10 @@
         "label": "Portugues",
         "shorthand": "br"
     },
+    "menu": {
+        "home": "Home",
+        "gen01": "Vendas"
+    },
     "general": {
         "copyright": "Vien Angular © 2020 All Rights Reserved.",
         "title": "Titulo Gen 01",
@@ -19,7 +23,11 @@
         }
     },
     "user": {
-        "login-title": "Login"
+        "login-title": "Login",
+        "login-button": "Entrar",
+        "error-title": "Ooops... parece que um erro ocorreu!",
+        "error-code": "Error code",
+        "go-back-home": "Voltar ao Login"
     },
     "datatable": {
         "nodata": "Sem dados para Listar",
@@ -34,5 +42,12 @@
         "next": "Proximo",
         "search": "Pesquisar",
         "new": "Novo"
+    },
+    "sale": {
+        "title": "Vendas",
+        "seller": "Vendedor",
+        "email": "Email",
+        "telephone": "Telefone",
+        "quantity": "Quantidade"
     }
 }

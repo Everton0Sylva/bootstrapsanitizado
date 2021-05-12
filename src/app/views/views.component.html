@@ -3,9 +3,8 @@
     <app-sidebar [menuItems]="menuItems"></app-sidebar>
     <main class="main">
         <div class="container">
-            <div class="col-12">
-                <router-outlet></router-outlet>
-            </div>
+            <app-breadcrumb></app-breadcrumb>
+            <router-outlet></router-outlet>
         </div>
     </main>
     <app-footer></app-footer>

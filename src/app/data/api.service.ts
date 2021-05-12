@@ -34,7 +34,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getProducts(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrl + '/cakes/paging';
+    const url = environment.url + '/cakes/paging';
     let params = new HttpParams();
     params = params.append('pageSize', pageSize + '');
     params = params.append('currentPage', currentPage + '');
@@ -87,7 +87,7 @@ export class ApiServiceOrders {
   constructor(private http: HttpClient) { }
 
   getOrders(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrl + '/cakes/paging';
+    const url = environment.url + '/cakes/paging';
     let params = new HttpParams();
     params = params.append('pageSize', pageSize + '');
     params = params.append('currentPage', currentPage + '');

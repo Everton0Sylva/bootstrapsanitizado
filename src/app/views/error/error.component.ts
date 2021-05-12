@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { HttpRequestService } from 'src/app/auth/http-request.service';
 
 @Component({
   selector: 'app-error',
@@ -6,7 +7,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class ErrorComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private authService: HttpRequestService,) { }
 
   ngOnInit() {
     document.body.classList.add('background');
@@ -14,6 +15,10 @@ export class ErrorComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     document.body.classList.remove('background');
+  }
+
+  onBackLogin(){
+    this.authService.logout();
   }
 
 }

@@ -78,9 +78,9 @@ export class ApiServiceCliacbpPolarAreaChart {
     let dataserver: any;
     let url: any;
 
-    url = environment.apiUrl + '/cakes/paging';
-    // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-    //const url = environment.apiUrlAdmin + '/CliacbpPolarAreaChart/api/v1/CliacbpPolarAreaChart/?format=datatables';
+    url = environment.url + '/cakes/paging';
+    // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+    //const url = environment.urlAdmin + '/CliacbpPolarAreaChart/api/v1/CliacbpPolarAreaChart/?format=datatables';
     dataserver = {
       labels: ['Diamond', 'Gold', 'Silver', 'Bronze'],
       datasets: [{

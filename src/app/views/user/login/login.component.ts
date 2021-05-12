@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   buttonDisabled = false;
   buttonState = '';
-  constructor(private notification: NotificationsService, private router: Router, private http: HttpClient, private oauth2request: HttpRequestService) { }
+  constructor(private notification: NotificationsService, private router: Router, private oauth2request: HttpRequestService) { }
   ngOnInit(): void {
 
   }
@@ -42,11 +42,6 @@ export class LoginComponent implements OnInit {
     this.buttonDisabled = true;
     this.buttonState = 'show-spinner';
 
-    localStorage.setItem('type', null);
-    localStorage.setItem('username', null);
-    localStorage.setItem('nome', null);
-    localStorage.setItem('uf', null);
-
     delay(200);
     let that = this
     this.oauth2request.login(this.username, this.password).then(
@@ -69,11 +64,6 @@ export class LoginComponent implements OnInit {
           that.notification.error('Erro', eMessage);
         }
       });
-  }
-
-  onTest() {
-    let eMessage = "Teste de mensagem 2"
-    this.notification.warn('Atenção', eMessage);
   }
 
   onChangeFocus() {

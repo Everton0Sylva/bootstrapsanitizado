@@ -33,7 +33,7 @@ export class ApiServiceCliConsumerActive {
   constructor(private http: HttpClient) { }
 
   getConsumerActive(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/CliConsumerActive/api/v1/CliConsumerActive/?format=datatables';
+    const url = environment.urlAdmin + '/CliConsumerActive/api/v1/CliConsumerActive/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

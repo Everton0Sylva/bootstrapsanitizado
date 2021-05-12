@@ -32,7 +32,7 @@ export class ApiServiceCliBusinessPlan {
   constructor(private http: HttpClient) { }
 
   getBusinessPlan(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/CliBusinessPlan/api/v1/CliBusinessPlan/?format=datatables';
+    const url = environment.urlAdmin + '/CliBusinessPlan/api/v1/CliBusinessPlan/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

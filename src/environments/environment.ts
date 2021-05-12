@@ -4,24 +4,17 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.coloredstrategies.com',
-  url: '',
-  apiUrlAdmin: 'http://201.82.177.203:8002',
+  urlAdmin: 'http://201.82.177.203:8002',
   defaultMenuType: 'menu-default',
   subHiddenBreakpoint: 1440,
   menuHiddenBreakpoint: 768,
   themeColorStorageKey: 'vien-themecolor',
-  isMultiColorActive: true,
-  /*
-  Color Options:
-  'light.blueyale', 'light.blueolympic', 'light.bluenavy', 'light.greenmoss', 'light.greenlime', 'light.yellowgranola', 'light.greysteel', 'light.orangecarrot', 'light.redruby', 'light.purplemonster'
-  'dark.blueyale', 'dark.blueolympic', 'dark.bluenavy', 'dark.greenmoss', 'dark.greenlime', 'dark.yellowgranola', 'dark.greysteel', 'dark.orangecarrot', 'dark.redruby', 'dark.purplemonster'
-  */
-  defaultColor: 'light.blueyale',
+
+  url: 'http://192.168.0.116:8000',
+
+  defaultColor: 'light.bluenavy',
   isDarkSwitchActive: true,
-  defaultDirection: 'ltr',
-  themeRadiusStorageKey: 'vien-themeradius',
-  isAuthGuardActive: true,
+
   firebase: {
     apiKey: 'AIzaSyCqoNLB_jTw4nncO12qR-eDH9gAeWiZVaw',
     authDomain: 'vien-angular-login.firebaseapp.com',

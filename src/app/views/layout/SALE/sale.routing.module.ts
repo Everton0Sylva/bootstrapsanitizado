@@ -5,13 +5,13 @@ Contato:gleisonnanet@gmail.com
 */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Gen01Component } from './gen01.component';
+import { SaleComponent } from './sale.component';
 
-const routes: Routes = [{ path: 'gen01', component: Gen01Component }];
+const routes: Routes = [{ path: 'gen01', component: SaleComponent }];
 
 @NgModule({
         imports: [RouterModule.forChild(routes)],
         exports: [RouterModule]
       })
-export class Gen01RoutingModule { }
+export class SaleRoutingModule { }
     

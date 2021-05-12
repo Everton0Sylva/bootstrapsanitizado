@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AuthService } from 'src/app/shared/auth.service';
 import { NotificationsService, NotificationType } from 'angular2-notifications';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { HttpRequestService } from 'src/app/auth/http-request.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   buttonDisabled = false;
   buttonState = '';
 
-  constructor(private authService: AuthService, private notifications: NotificationsService, private router: Router) { }
+  constructor(private authService: HttpRequestService, private notifications: NotificationsService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,9 +25,9 @@ export class RegisterComponent implements OnInit {
     this.buttonDisabled = true;
     this.buttonState = 'show-spinner';
 
-    this.authService.register(this.registerForm.value).subscribe(() => {
+    this.authService.register(this.registerForm.value).then(() => {
       this.router.navigate(['/']);
-    }, (error) => {
+    }).catch((error) => {
       this.notifications.create('Error', error.message, NotificationType.Bare, { theClass: 'outline primary', timeOut: 6000, showProgressBar: false });
       this.buttonDisabled = false;
       this.buttonState = '';

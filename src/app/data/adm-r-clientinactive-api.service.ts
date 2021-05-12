@@ -37,7 +37,7 @@ export class ApiServiceAdmClientInactive {
   constructor(private http: HttpClient) { }
 
   getClientInactive(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/AdmClientInactive/api/v1/AdmClientInactive/?format=datatables';
+    const url = environment.urlAdmin + '/AdmClientInactive/api/v1/AdmClientInactive/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

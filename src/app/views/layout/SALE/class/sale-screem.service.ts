@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class Gen01ScreemService {
+export class SaleScreemService {
 
   constructor() { }
   changetable(): string {

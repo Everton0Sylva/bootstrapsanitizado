@@ -98,9 +98,9 @@ export class ApiServiceCliacAreaChart {
     let url: any;
 
     if (vision === 'acDayWeek') {
-      url = environment.apiUrl + '/cakes/paging';
-      // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      //const url = environment.apiUrlAdmin + '/CliacAreaChartDayWeek/api/v1/CliacAreaChartDayWeek/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      //const url = environment.urlAdmin + '/CliacAreaChartDayWeek/api/v1/CliacAreaChartDayWeek/?format=datatables';
       dataserver = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
@@ -113,9 +113,9 @@ export class ApiServiceCliacAreaChart {
     };
 
     if (vision === 'acMonthYear') {
-      url = environment.apiUrl + '/cakes/paging';
-      //url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      // const url = environment.apiUrlAdmin + '/CliacAreaChartMonthYear/api/v1/CliacAreaChartMonthYear/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      //url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      // const url = environment.urlAdmin + '/CliacAreaChartMonthYear/api/v1/CliacAreaChartMonthYear/?format=datatables';
       dataserver = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
@@ -128,9 +128,9 @@ export class ApiServiceCliacAreaChart {
     };
 
     if (vision === 'appDayWeek') {
-      url = environment.apiUrl + '/cakes/paging';
-      // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      //const url = environment.apiUrlAdmin + '/CliappAreaChartDayWeek/api/v1/CliappAreaChartDayWeek/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      //const url = environment.urlAdmin + '/CliappAreaChartDayWeek/api/v1/CliappAreaChartDayWeek/?format=datatables';
       dataserver = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
@@ -143,9 +143,9 @@ export class ApiServiceCliacAreaChart {
     };
 
     if (vision === 'appMonthYear') {
-      url = environment.apiUrl + '/cakes/paging';
-      //url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      // const url = environment.apiUrlAdmin + '/CliappAreaChartMonthYear/api/v1/CliappAreaChartMonthYear/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      //url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      // const url = environment.urlAdmin + '/CliappAreaChartMonthYear/api/v1/CliappAreaChartMonthYear/?format=datatables';
       dataserver = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
@@ -158,9 +158,9 @@ export class ApiServiceCliacAreaChart {
     };
 
     if (vision === 'vaDayWeek') {
-      url = environment.apiUrl + '/cakes/paging';
-      // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      //const url = environment.apiUrlAdmin + '/ClivaAreaChartDayWeek/api/v1/ClivaAreaChartDayWeek/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      //const url = environment.urlAdmin + '/ClivaAreaChartDayWeek/api/v1/ClivaAreaChartDayWeek/?format=datatables';
       dataserver = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
@@ -173,9 +173,9 @@ export class ApiServiceCliacAreaChart {
     };
 
     if (vision === 'vaMonthYear') {
-      url = environment.apiUrl + '/cakes/paging';
-      //url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      // const url = environment.apiUrlAdmin + '/ClivaAreaChartMonthYear/api/v1/ClivaAreaChartMonthYear/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      //url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      // const url = environment.urlAdmin + '/ClivaAreaChartMonthYear/api/v1/ClivaAreaChartMonthYear/?format=datatables';
       dataserver = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{

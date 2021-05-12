@@ -10,6 +10,8 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewsModule } from './views/views.module';
+import { ErrorComponent } from './views/error/error.component';
+import { HttpsRequestInterceptor, InterceptorModule } from './auth/interceptor.module';
 
 @NgModule({
   imports: [
@@ -21,12 +23,17 @@ import { ViewsModule } from './views/views.module';
     BrowserAnimationsModule,
     TranslateModule.forRoot(),
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    InterceptorModule,
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorComponent,
   ],
-  providers: [],
+  exports: [
+    TranslateModule
+  ],
+
+  providers: [HttpsRequestInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,7 +8,6 @@ import {
     HttpRequest, HttpClient, HttpErrorResponse, HttpHeaders,
 } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { OAuth2Response } from './OAuth2Response';
 import { catchError, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { HttpRequestService } from './http-request.service';
@@ -19,12 +18,10 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 @Injectable()
 
 export class HttpsRequestInterceptor implements HttpInterceptor {
-    private usuario: OAuth2Response;
     constructor(private http: HttpClient
         , private router: Router
         , private OAuth: HttpRequestService
         , private ngxService: NgxUiLoaderService) {
-        this.usuario = new OAuth2Response();
     }
 
     cont: any = 0;
@@ -33,7 +30,7 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
         next: HttpHandler,
     ): Observable<HttpEvent<any>> {
         const self = this;
-        const dupReq = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + JSON.parse(localStorage.getItem('_access_token'))), });
+        const dupReq = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))), });
         dupReq.headers.set('Access-Control-Allow-Origin', '*');
         dupReq.headers.set('Access-Control-Allow-Method', 'GET,POST,OPTIONS,DELETE,PUT');
 
@@ -42,7 +39,6 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
             .pipe(
                 tap((ev: HttpEvent<any>) => { }),
                 catchError(response => {
-                    // debugger
                     if (response instanceof HttpErrorResponse) {
                         if (response.status === 401) {
                             this.ngxService.start();
@@ -68,8 +64,8 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
                                 this.ngxService.stop();
                                 return throwError(response);
                             }
-                     /*   } else if (response.status === 0) {
-                            this.router.navigate(['500']);*/
+                            /*   } else if (response.status === 0) {
+                                   this.router.navigate(['500']);*/
                         } else {
                             console.log('Http error', response);
                             return throwError(response);

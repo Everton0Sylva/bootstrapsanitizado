@@ -107,9 +107,9 @@ export class ApiServiceCliBroSmallChart {
     };
 
     if (pLabel === 'Bronze Plan') {
-      url = environment.apiUrl + '/cakes/paging';
-      // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      //const url = environment.apiUrlAdmin + '/ClicbpBroSmallChart/api/v1/ClicbpBroSmallChart/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      //const url = environment.urlAdmin + '/ClicbpBroSmallChart/api/v1/ClicbpBroSmallChart/?format=datatables';
       dataserver = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
@@ -120,9 +120,9 @@ export class ApiServiceCliBroSmallChart {
     };
 
     if (pLabel === 'Silver Plan') {
-      url = environment.apiUrl + '/cakes/paging';
-      // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      //const url = environment.apiUrlAdmin + '/ClicbpSilSmallChart/api/v1/ClicbpSilSmallChart/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      //const url = environment.urlAdmin + '/ClicbpSilSmallChart/api/v1/ClicbpSilSmallChart/?format=datatables';
       dataserver = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
@@ -133,9 +133,9 @@ export class ApiServiceCliBroSmallChart {
     };
 
     if (pLabel === 'Gold Plan') {
-      url = environment.apiUrl + '/cakes/paging';
-      // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      //const url = environment.apiUrlAdmin + '/ClicbpGolSmallChart/api/v1/ClicbpGolSmallChart/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      //const url = environment.urlAdmin + '/ClicbpGolSmallChart/api/v1/ClicbpGolSmallChart/?format=datatables';
       dataserver = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
@@ -146,9 +146,9 @@ export class ApiServiceCliBroSmallChart {
     };
 
     if (pLabel === 'Diamond Plan') {
-      url = environment.apiUrl + '/cakes/paging';
-      // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-      //const url = environment.apiUrlAdmin + '/ClicbpDiaSmallChart/api/v1/ClicbpDiaSmallChart/?format=datatables';
+      url = environment.url + '/cakes/paging';
+      // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+      //const url = environment.urlAdmin + '/ClicbpDiaSmallChart/api/v1/ClicbpDiaSmallChart/?format=datatables';
       dataserver = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{

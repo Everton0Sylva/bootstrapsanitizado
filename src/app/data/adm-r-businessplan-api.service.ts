@@ -34,7 +34,7 @@ export class ApiServiceAdmBusinessPlan {
   constructor(private http: HttpClient) { }
 
   getBusinessPlan(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/AdmBusinessPlan/api/v1/AdmBusinessPlan/?format=datatables';
+    const url = environment.urlAdmin + '/AdmBusinessPlan/api/v1/AdmBusinessPlan/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

@@ -81,9 +81,9 @@ export class ApiServiceAdmcbpDoughnutChart {
     let dataserver: any;
     let url: any;
 
-    url = environment.apiUrl + '/cakes/paging';
-    // url = environment.apiUrlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
-    //const url = environment.apiUrlAdmin + '/AdmcbpDoughnutChart/api/v1/AdmcbpDoughnutChart/?format=datatables';
+    url = environment.url + '/cakes/paging';
+    // url = environment.urlAdmin + '/CliProduct/api/v1/CliProduct/?format=datatables';
+    //const url = environment.urlAdmin + '/AdmcbpDoughnutChart/api/v1/AdmcbpDoughnutChart/?format=datatables';
     dataserver = {
       labels: ['Diamond', 'Gold', 'Silver', 'Bronze'],
       datasets: [{

@@ -33,7 +33,7 @@ export class ApiServiceCliActiveUser {
   constructor(private http: HttpClient) { }
 
   getActiveUser(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/CliActiveUser/api/v1/CliActiveUser/?format=datatables';
+    const url = environment.urlAdmin + '/CliActiveUser/api/v1/CliActiveUser/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

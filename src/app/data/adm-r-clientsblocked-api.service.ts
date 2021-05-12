@@ -37,7 +37,7 @@ export class ApiServiceAdmClientsBlocked {
   constructor(private http: HttpClient) { }
 
   getClientsBlocked(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/AdmClientsBlocked/api/v1/AdmClientsBlocked/?format=datatables';
+    const url = environment.urlAdmin + '/AdmClientsBlocked/api/v1/AdmClientsBlocked/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');

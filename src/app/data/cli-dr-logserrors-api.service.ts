@@ -39,7 +39,7 @@ export class ApiServiceCliLogsErrors {
   constructor(private http: HttpClient) { }
 
   getLogsErrorsSumary(ptype: string = 'Sumary', pageSize: number = 20, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/AdmLogsErrors/api/v1/AdmLogsErrors/?format=datatables';
+    const url = environment.urlAdmin + '/AdmLogsErrors/api/v1/AdmLogsErrors/?format=datatables';
 
     search = ptype;
 
@@ -107,7 +107,7 @@ export class ApiServiceCliLogsErrors {
   }
 
   getLogsErrors(pageSize: number = 10, currentPage: number = 1, search: string = '', orderBy: string = '') {
-    const url = environment.apiUrlAdmin + '/CliLogsErrors/api/v1/CliLogsErrors/?format=datatables';
+    const url = environment.urlAdmin + '/CliLogsErrors/api/v1/CliLogsErrors/?format=datatables';
 
     let headers = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');
