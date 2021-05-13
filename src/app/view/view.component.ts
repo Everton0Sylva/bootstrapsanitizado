@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToasterConfig } from "angular2-toaster";
 import { Subscription } from 'rxjs';
-import { IMenuItem } from '../constants/_nav';
-import { menuMain } from '../constants/_nav-Main';
+import { IMenuItem } from 'src/app/constants/_nav';
+import { menuMain } from 'src/app/navigation/navigation';
 import { ISidebar, SidebarService } from '../layout/sidebar/sidebar.service';
 
 @Component({
@@ -26,7 +26,7 @@ export class ViewComponent implements OnInit {
     sidebar: ISidebar;
     subscription: Subscription;
     constructor(private sidebarService: SidebarService) {
-      // this.router.navigateByUrl('/app');
+
     }
     
     ngOnInit() {

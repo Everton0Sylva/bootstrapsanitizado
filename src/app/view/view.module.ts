@@ -15,7 +15,6 @@ import { LayoutRoutingModule } from './layout/layout.routing';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ToasterModule } from 'angular2-toaster';
 import { NgxMaskModule } from 'ngx-mask'
-import { SaleModule } from './layout/SALE/sale.module';
 
 @NgModule({
  declarations: [ViewComponent,
@@ -35,8 +34,7 @@ import { SaleModule } from './layout/SALE/sale.module';
     CollapseModule,
     TooltipModule.forRoot(),
     NgxMaskModule.forRoot(),
-    LayoutContainersModule,
-    SaleModule
+    LayoutContainersModule
   ],
   exports: []
 })
