@@ -7,7 +7,7 @@ import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChil
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { ColumnMode, DatatableComponent, SelectionType } from '@swimlane/ngx-datatable';
+import { ColumnMode } from '@swimlane/ngx-datatable';
 import { Sale, SaleInterface } from '../class/sale';
 import { SaleHttpDatatable, SaleService } from '../class/sale.service';
 import { SaleScreemService } from '../class/sale-screem.service';
@@ -38,12 +38,9 @@ export class SaleTableComponent implements OnInit, AfterViewInit {
         "Quantidade"
     ]
 
-    durationInSeconds = 5;
-    resultsLength = 0;
     DatabaseServer: SaleHttpDatatable | null;
     data: SaleInterface[] = [];
     isLoadingResults = true;
-    isRateLimitReached = false;
 
     public dataRows = []
     public dataRowsFilter = []
@@ -57,7 +54,7 @@ export class SaleTableComponent implements OnInit, AfterViewInit {
     constructor(private saleScreemService: SaleScreemService, private _httpClient: HttpClient,
         public _FormBuilder: FormBuilder,
         //   private Showalert: AlertService,
-        private saleService: SaleService, private translateService: TranslateService
+        private saleService: SaleService
     ) {
     }
 
@@ -239,31 +236,8 @@ export class SaleTableComponent implements OnInit, AfterViewInit {
     },
     ]
 
-
-
-    expanded: any = {};
-    timeout: any;
-    itemsPerPage = 10;
-    ColumnMode = ColumnMode;
-    columns = [
-        { prop: 'title', name: 'Nome' },
-        { prop: 'status', name: 'Status' },
-        { prop: 'category', name: 'Categoria' },
-    ];
-
-    onPage(event) {
-    }
-
-    toggleExpandRow(row) {
-        this.table.rowDetail.toggleExpandRow(row);
-    }
-
-    onDetailToggle(event) {
-    }
-
     updateFilter(event) {
         const val = event.target.value.toLowerCase().trim();
-        const count = this.columns.length;
         let temp = this.dataRows.filter(item => {
             let find = false
             this.displayedColumns.forEach((key: any) => {
@@ -278,9 +252,7 @@ export class SaleTableComponent implements OnInit, AfterViewInit {
         this.table.offset = 0;
     }
 
-
     onNew() {
-        this.sale = new Sale();
         this.enviaStatusTela();
         this.saleScreemService.changeform();
         this.telaTableEvent.emit(this.tela);
