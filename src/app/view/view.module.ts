@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ViewsComponent } from './views.component';
-import { ViewRoutingModule } from './views.routing';
+import { ViewComponent } from './view.component';
+import { ViewRoutingModule } from './view.routing';
 import { TranslateModule } from '@ngx-translate/core';
 import { LayoutModule } from './layout/layout.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +18,7 @@ import { NgxMaskModule } from 'ngx-mask'
 import { SaleModule } from './layout/SALE/sale.module';
 
 @NgModule({
- declarations: [ViewsComponent,
+ declarations: [ViewComponent,
 ],
   imports: [
     CommonModule,
@@ -40,4 +40,4 @@ import { SaleModule } from './layout/SALE/sale.module';
   ],
   exports: []
 })
-export class ViewsModule { }
+export class ViewModule { }

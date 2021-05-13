@@ -9,8 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ViewsModule } from './views/views.module';
-import { ErrorComponent } from './views/error/error.component';
+import { ViewModule } from './view/view.module';
+import { ErrorComponent } from './view/error/error.component';
 import { HttpsRequestInterceptor, InterceptorModule } from './auth/interceptor.module';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { HttpsRequestInterceptor, InterceptorModule } from './auth/interceptor.m
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    ViewsModule,
+    ViewModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot(),

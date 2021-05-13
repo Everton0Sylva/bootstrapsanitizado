@@ -6,11 +6,11 @@ import { menuMain } from '../constants/_nav-Main';
 import { ISidebar, SidebarService } from '../layout/sidebar/sidebar.service';
 
 @Component({
-  selector: 'app-views',
-  templateUrl: './views.component.html'
+  selector: 'app-view',
+  templateUrl: './view.component.html'
 })
 
-export class ViewsComponent implements OnInit {
+export class ViewComponent implements OnInit {
 
   public toasterconfig: ToasterConfig =
     new ToasterConfig({

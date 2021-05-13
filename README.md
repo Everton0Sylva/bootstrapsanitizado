@@ -36,7 +36,7 @@ COMANDOS
 
 ng g c pages/home
 
-ng g c views/page/register
+ng g c view/page/register
 
 
 const routes: Routes = [{ path: 'home', component: HomeComponent }];
