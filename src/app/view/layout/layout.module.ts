@@ -16,7 +16,6 @@ import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout.routing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { SaleModule } from './SALE/sale.module';
 
 @NgModule({
   imports: [
@@ -31,14 +30,7 @@ import { SaleModule } from './SALE/sale.module';
     TooltipModule.forRoot(),
     NgxMaskModule.forRoot(),
     TranslateModule,
-    NgxDatatableModule.forRoot({
-      messages: {
-        emptyMessage: "Sem dados para Listar",
-        totalMessage: "Registros totais",
-        selectedMessage: ""
-      }
-    }),
-    SaleModule
+    NgxDatatableModule
   ],
   declarations: [
     LayoutComponent,
