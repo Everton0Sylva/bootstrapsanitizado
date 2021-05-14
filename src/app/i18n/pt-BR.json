@@ -42,12 +42,5 @@
         "next": "Proximo",
         "search": "Pesquisar",
         "new": "Novo"
-    },
-    "sale": {
-        "title": "Vendas",
-        "seller": "Vendedor",
-        "email": "Email",
-        "telephone": "Telefone",
-        "quantity": "Quantidade"
     }
 }
