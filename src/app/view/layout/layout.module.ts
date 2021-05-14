@@ -16,6 +16,7 @@ import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout.routing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     TooltipModule.forRoot(),
     NgxMaskModule.forRoot(),
     TranslateModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    kingBModule
   ],
   declarations: [
     LayoutComponent,
