@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+    <div class="col-md-12 col-xl-12 form-group">
+        <label class="form-label">{{label}}</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i [class]="icon"></i></div>
+            </div>
+            <input class="form-control" [type]="pwType" [formControlName]="name" [placeholder]="label"
+                (focus)="onFocus()" (blur)="onBlur()" (change)="change($event)">
+            <div class="input-group-append">
+                <div class="input-group-text" (click)="onShowPassword()">
+                    <span class="d-flex align-items-center" [ngSwitch]="showPasswd">
+                        <i *ngSwitchCase="false" class="far fa-eye"></i>
+                        <i *ngSwitchCase="true" class="far fa-eye-slash"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="isInvalidField">{{error}} Obrigatorio</div>
+    </div>
+</form>

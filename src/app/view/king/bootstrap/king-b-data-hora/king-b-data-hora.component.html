@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+    <div class="col-md-12 col-xl-12 form-group">
+        <label class="form-label">{{label}}</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">{{prefix}}</span>
+            </div>
+            <input type="text" [id]="name" (change)="change($event)" [formControlName]="name" class="form-control"
+                (focus)="onFocus()" (blur)="onBlur()">
+
+            <div class="input-group-append">
+                <button type="button" class="btn" #dp="bsDatepicker" bsDatepicker [bsConfig]="bsConfig"
+                    (focus)="onFocus()"
+                    [ngClass]="{ 'btn-outline-secondary disabled': !dateSetted, 'btn-success': dateSetted }"
+                    (bsValueChange)="onSetDate($event)">
+                    <span class="d-flex align-items-center"><i [class]="icon1"></i></span>
+                </button>
+                <button type="button" class="btn" (focus)="onFocus()"
+                    [ngClass]="{ 'btn-outline-secondary disabled': !timeSetted, 'btn-success': timeSetted }"
+                    #p="ngbPopover" (click)="p.open()" [ngbPopover]="popContent" [autoClose]="false" triggers="manual">
+                    <span class="d-flex align-items-center"><i [class]="icon2"></i></span>
+                </button>
+            </div>
+        </div>
+        <ng-template #popContent>
+            <div class="row m-1">
+                <timepicker [showSpinners]="false" [mousewheel]="true" [showSeconds]="showSeconds"
+                    [showMeridian]="false" [(ngModel)]="timeSetted" [ngModelOptions]="{standalone: true}">
+                </timepicker>
+                <button class="btn btn-info ml-2" (click)="onSetTime(p)">OK</button>
+            </div>
+        </ng-template>
+        <div class="invalid-feedback d-block" *ngIf="isInvalidField">{{error}} {{isDate ? 'Obrigatório' : 'Inválida'
+            }}
+        </div>
+    </div>
+</form>

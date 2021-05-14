@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+    <div class="col-md-12 col-xl-12 form-group">
+        <label class="form-label">{{label}}</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">{{prefix}}</span>
+            </div>
+            <input type="text" #dp="bsDatepicker" [id]="name" (bsValueChange)="change($event)" [formControlName]="name" class="form-control"
+                bsDatepicker [bsConfig]="bsConfig"  (focus)="onFocus()" (blur)="onBlur()">
+            <div class="input-group-text" (click)="openDate(dp)">
+                <span class="d-flex align-items-center"><i [class]="icon"></i></span>
+            </div>
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="isInvalidField">{{error}} {{isDate ? 'Obrigatório' : 'Inválida' }}</div>
+    </div>
+</form>

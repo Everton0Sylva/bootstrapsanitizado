@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+    <div class="col-xl-12 form-group">
+        <div class="row">
+            <div class="col-12">
+                <label class="form-label">{{label}}</label>
+            </div>
+            <div class="col-12 pr-0 pb-0 pt-0">
+                <div class="d-flex flex-row">
+                    <div class="col-5 p-0">
+                        <div class="input-group">
+                            <div class="input-group-prepend"><input type="file" hidden id="onUploadImage"
+                                    [multiple]="multiple" (change)="onUploadImage($event)">
+                                <div class="input-group-text"><i [class]="icon"></i></div>
+                            </div>
+                            <div class="input-group-append">
+                                <button (blur)="onBlur()" class="btn btn-primary btn-sm m-0" (click)="onbtnUpload()">Upload<span
+                                class="ml-1" [ngSwitch]="multiple">
+                                        <i *ngSwitchCase="false" class="fas fa-image"></i>
+                                        <i *ngSwitchCase="true" class="fas fa-images"></i>
+                                    </span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7 m-0 p-0">
+                        <div class="row m-0 p-0" *ngIf="files.length > 0">
+                            <label class="text-wrap">
+                                <i class="fas fa-clipboard-check fa-lg text-muted ml-1"></i>
+                                {{files.length}}
+                                {{files.length > 1 ? 'Imagens carregadas!' : 'Imagem carregada!' }}</label>
+
+                            <button class="btn btn-secondary btn-sm ml-1 p-0" (click)="change()"
+                                data-toggle="tooltip" title="Enviar fotos">
+                                <i class="fas fa-file-import m-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="isInvalidField">{{error}} Obrigatorio</div>
+    </div>
+</form>

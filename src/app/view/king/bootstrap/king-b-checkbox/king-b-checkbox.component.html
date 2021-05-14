@@ -1,0 +1,10 @@
+<form [formGroup]="form">
+    <div class="col-md-12 col-xl-12 form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="dflCheck1" [formControlName]="name"
+                (change)="change($event)" (focus)="onFocus()" (blur)="onBlur()">
+            <label class="form-check-label" for="dflCheck1">{{label}}</label>
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="isInvalidField">{{error}} Obrigatorio</div>
+    </div>
+</form>

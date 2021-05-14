@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <div class="col-md-12 col-xl-12 form-group">
+        <label class="form-label">{{label}}</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">{{prefix}}</span>
+            </div>
+            <select class="form-control" [formControlName]="name" (focus)="onFocus()" (blur)="onBlur()">
+                <option disabled>{{label}}</option>
+                <option *ngFor="let item of dataItens" value="{{item.value}}"> {{item.label}} </option>
+            </select>
+            <div class="input-group-append">
+                <div class="input-group-text d-flex align-items-center"><i [class]="icon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="invalid-feedback">{{error}} Obrigatorio</div>
+    </div>
+</form>

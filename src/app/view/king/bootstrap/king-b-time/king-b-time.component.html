@@ -1,0 +1,9 @@
+<form [formGroup]="form">
+    <div class="col-md-12 col-xl-12 form-group">
+        <label class="form-label">{{label}}</label>
+        <input class="form-control" type="time" [formControlName]="name" [placeholder]="label" (change)="change($event)"
+            (focus)="onFocus()" (blur)="onBlur()">
+        <div class="invalid-feedback d-block" *ngIf="isInvalidField">{{error}} {{isDate ? 'Obrigatório' : 'Inválida' }}
+        </div>
+    </div>
+</form>

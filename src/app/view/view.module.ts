@@ -15,6 +15,7 @@ import { LayoutRoutingModule } from './layout/layout.routing';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ToasterModule } from 'angular2-toaster';
 import { NgxMaskModule } from 'ngx-mask'
+import { kingBModule } from './king/bootstrap/king-b.module';
 
 @NgModule({
  declarations: [ViewComponent,
@@ -34,7 +35,8 @@ import { NgxMaskModule } from 'ngx-mask'
     CollapseModule,
     TooltipModule.forRoot(),
     NgxMaskModule.forRoot(),
-    LayoutContainersModule
+    LayoutContainersModule,
+    kingBModule,
   ],
   exports: []
 })

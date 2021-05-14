@@ -1,0 +1,15 @@
+<div class="col-md-12 col-xl-12 form-group">
+    <label class="form-label">{{label}}</label>
+    <div class="input-group">
+        <div class="col-md-12">
+            <div class="row align-items-center justify-content-start">
+                <div class="form-check col-md-3" *ngFor="let item of dataItens">
+                    <input class="form-check-input" type="checkbox" [id]="item.value" [(ngModel)]="item.checked"
+                        (change)="change()">
+                    <label class="form-check-label text-wrap" for="item.value">{{item.label}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="invalid-feedback d-block mt-1" *ngIf="isInvalidField">{{error}}</div>
+</div>
