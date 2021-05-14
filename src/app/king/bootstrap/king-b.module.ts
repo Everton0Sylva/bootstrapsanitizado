@@ -21,7 +21,6 @@ import { KingBDataHoraComponent } from './king-b-data-hora/king-b-data-hora.comp
 import { KingBCheckboxComponent } from './king-b-checkbox/king-b-checkbox.component';
 import { KingBCheckgroupComponent } from './king-b-checkgroup/king-b-checkgroup.component';
 import { KingBDateComponent } from './king-b-date/king-b-date.component';
-import { KingBCpfCpnjComponent } from './king-b-cpfcpnj/king-b-cpfcpnj.component';
 //import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -56,7 +55,6 @@ import { KingBCpfCpnjComponent } from './king-b-cpfcpnj/king-b-cpfcpnj.component
         KingBDataHoraComponent,
         KingBCheckboxComponent,
         KingBCheckgroupComponent,
-        KingBCpfCpnjComponent
     ],
     exports: [
 
@@ -74,8 +72,7 @@ import { KingBCpfCpnjComponent } from './king-b-cpfcpnj/king-b-cpfcpnj.component
         KingBConsultaComponent,
         KingBDataHoraComponent,
         KingBCheckboxComponent,
-        KingBCheckgroupComponent,
-        KingBCpfCpnjComponent
+        KingBCheckgroupComponent
     ],
 
 })

@@ -14,11 +14,12 @@ import { LayoutContainersModule } from '../layout/layout.containers.module';
 import { LayoutRoutingModule } from './layout/layout.routing';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ToasterModule } from 'angular2-toaster';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
+import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
 
 @NgModule({
- declarations: [ViewComponent,
-],
+  declarations: [ViewComponent,
+  ],
   imports: [
     CommonModule,
     ViewRoutingModule,
@@ -35,6 +36,7 @@ import { NgxMaskModule } from 'ngx-mask'
     TooltipModule.forRoot(),
     NgxMaskModule.forRoot(),
     LayoutContainersModule,
+    kingBModule
   ],
   exports: []
 })
