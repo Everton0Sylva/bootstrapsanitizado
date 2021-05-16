@@ -17,7 +17,7 @@ export class ViewComponent implements OnInit {
       //showCloseButton: true, 
       positionClass: 'toast-top-center',
       tapToDismiss: true,
-      timeout: 10000
+      timeout: 5000
     });
 
     public menuItems: IMenuItem[];

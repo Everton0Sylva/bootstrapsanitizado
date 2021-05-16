@@ -1,7 +1,6 @@
 @import "~@swimlane/ngx-datatable/index.css";
 @import "~@swimlane/ngx-datatable/assets/icons.css";
 @import "~@swimlane/ngx-datatable/themes/bootstrap.scss";
-
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/regular";
@@ -10,10 +9,67 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
 @import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~bootstrap/scss/bootstrap";
 
+
+@import "node_modules/angular2-toaster/toaster";
 /*
 bootstrap table theme
 */
+
+.king-footer {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.king-body {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+.king-header {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 0.7rem !important;
+}
+
+.king-top-danger {
+    border-top: 8px solid $danger !important;
+}
+.king-top-primary {
+    border-top: 8px solid $primary !important;
+}
+.king-top-warning {
+    border-top: 8px solid $warning !important;
+}
+
+.king-top-success {
+    border-top: 8px solid $success !important;
+}
+.king-top-info {
+    border-top: 8px solid $info !important;
+}
+
+.king-bottom-danger {
+    border-bottom: 8px solid $danger !important;
+}
+.king-bottom-primary {
+    border-bottom: 8px solid $primary !important;
+}
+.king-bottom-warning {
+    border-bottom: 8px solid $warning !important;
+}
+.king-bottom-secondary {
+    border-bottom: 8px solid $secondary !important;
+}
+.king-bottom-success {
+    border-bottom: 8px solid $success !important;
+}
+.king-bottom-info {
+    border-bottom: 8px solid $info !important;
+}
 
 .ngx-datatable.bootstrap2 {
     box-shadow: inset;

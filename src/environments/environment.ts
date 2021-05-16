@@ -10,7 +10,7 @@ export const environment = {
   menuHiddenBreakpoint: 768,
   themeColorStorageKey: 'vien-themecolor',
 
-  url: 'http://192.168.0.116:8000',
+  url: 'http://191.7.172.11:32761',
 
   defaultColor: 'light.bluenavy',
   isDarkSwitchActive: true,

@@ -9,6 +9,7 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        
       },
     ]
   },

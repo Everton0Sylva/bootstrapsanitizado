@@ -5,9 +5,9 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">{{prefix}}</span>
             </div>
-            <select class="form-control" [formControlName]="name" (focus)="onFocus()" (blur)="onBlur()">
+            <select class="form-control" [formControlName]="name"  (change)="change()">
                 <option disabled>{{label}}</option>
-                <option *ngFor="let item of dataItens" value="{{item.value}}"> {{item.label}} </option>
+                <option *ngFor="let item of dataItens" value="{{item.value}}"> {{item.name}} </option>
             </select>
             <div class="input-group-append">
                 <div class="input-group-text d-flex align-items-center"><i [class]="icon"></i>

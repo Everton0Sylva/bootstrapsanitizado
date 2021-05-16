@@ -1,10 +1,9 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-king-b-textarea',
-  templateUrl: './king-b-textarea.component.html',
-  styleUrls: ['./king-b-textarea.component.scss']
+  templateUrl: './king-b-textarea.component.html'
 })
 export class KingBTextareaComponent implements OnInit {
   @Input()

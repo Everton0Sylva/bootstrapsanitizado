@@ -134,7 +134,6 @@ export class HttpRequestService {
                         resolve(res);
                     }
                 ).catch(data => {
-                    debugger
                     self.router.navigate(['/user/login']);
                 });
         });

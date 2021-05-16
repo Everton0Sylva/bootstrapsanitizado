@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewModule } from './view/view.module';
 import { ErrorComponent } from './view/error/error.component';
 import { HttpsRequestInterceptor, InterceptorModule } from './auth/interceptor.module';
+import { ToasterModule } from 'angular2-toaster';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { HttpsRequestInterceptor, InterceptorModule } from './auth/interceptor.m
     BrowserAnimationsModule,
     TranslateModule.forRoot(),
     HttpClientModule,
-    InterceptorModule,
+    InterceptorModule
   ],
   declarations: [
     AppComponent,

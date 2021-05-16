@@ -13,7 +13,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LayoutContainersModule } from '../layout/layout.containers.module';
 import { LayoutRoutingModule } from './layout/layout.routing';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
-import { ToasterModule } from 'angular2-toaster';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { NgxMaskModule } from 'ngx-mask';
 import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
 
@@ -28,16 +28,18 @@ import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
     LayoutRoutingModule,
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
-    ModalModule,
     HttpClientModule,
     NgxUiLoaderModule,
-    ToasterModule,
+    ToasterModule.forRoot(),
     CollapseModule,
     TooltipModule.forRoot(),
     NgxMaskModule.forRoot(),
     LayoutContainersModule,
-    kingBModule
+    kingBModule,
+    ModalModule.forRoot(),
   ],
-  exports: []
+  exports: [ToasterModule],
+
+  providers: [ToasterService],
 })
 export class ViewModule { }

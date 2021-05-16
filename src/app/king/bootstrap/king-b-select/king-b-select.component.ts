@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { isNullOrUndefined } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'app-king-b-select',
@@ -24,17 +26,38 @@ export class KingBSelectComponent implements OnInit {
   @Input()
   icon: string;
 
+  @Input() field_filter!: string;
+  @Input() field_select: string;
+
   @Input()
   set setOpts(value: any) {
-    value.forEach((element: any, index: any) => {
-      this.dataItens.push({ value: index, label: element })
-    });
+    let self = this;
+    if (Array.isArray(value)) {
+      value.forEach((element: any) => {
+        let nValue = element.toLowerCase().replace(' ', '')
+        self.dataItens.push(element)
+      });
+    } else {
+      value.genericGet()
+        .then((data: any) => {
+          if (Array.isArray(data)) {
+            data.map((item: any, index: number) => {
+              let newItem: any = {};
+              newItem.value = item[this.field_select];
+              newItem.name = isNullOrUndefined(item[this.field_filter]) ? item.id : item[this.field_filter]
+              self.dataItens.push(newItem);
+            });
+          }
+        }).catch((error: any) => {
+          console.log(error);
+        })
+    }
   }
 
   @Output()
   selectEvent = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   public dataItens = Array<any>()
 
@@ -46,21 +69,8 @@ export class KingBSelectComponent implements OnInit {
   ngOnInit() {
   }
 
-  onFocus() {
- 
-  }
 
-  onBlur() {
-    let t = this.form.controls[this.name].status
-    if (t.indexOf('INVA') >= 0) {
-      this.isInvalidField = true;
-    } else {
-      this.isInvalidField = false;
-    }
-  }
-
-
-  change(event: any) {
-    this.selectEvent.emit(event);
+  change() {
+    this.selectEvent.emit(this.form.controls[this.name]);
   }
 }
