@@ -1,0 +1,35 @@
+<div bsModal #dialogAlert="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="dialogalert" aria-hidden="true" [config]="config">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="king-header">
+                <h4 class="text-capitalize">{{title}}</h4>
+            </div>
+            <king-b-separator [kingBSeparator]="type"></king-b-separator>
+            <div class="king-body">
+                <h6>{{message}}</h6>
+            </div>
+            <king-b-separator [kingBSeparator]="type"></king-b-separator>
+            <div class="king-footer">
+                <div class="w-100 d-flex align-items-center justify-content-center" [ngSwitch]="type">
+                    <div *ngSwitchCase="'confirm'">
+                        <button type="button" class="btn btn-secondary ml-auto mr-3"
+                            (click)="onCancel()">Cancelar</button>
+                        <button type="button" class="btn btn-success" (click)="onConfirm()">Incluir</button>
+                    </div>
+                    <div *ngSwitchCase="'danger'">
+                        <button type="button" class="btn btn-secondary ml-auto mr-3" (click)="onCancel()">Não</button>
+                        <button type="button" class="btn btn-danger" (click)="onConfirm()">Sim</button>
+                    </div>
+                    <div *ngSwitchCase="'warning'">
+                        <button type="button" class="btn btn-secondary ml-auto mr-3" (click)="onCancel()">Não</button>
+                        <button type="button" class="btn btn-warning" (click)="onConfirm()">Sim</button>
+                    </div>
+                    <div *ngSwitchDefault="'default'">
+                        <button type="button" class="btn btn-primary ml-auto" (click)="onCancel()">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
