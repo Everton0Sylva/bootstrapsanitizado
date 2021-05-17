@@ -2,7 +2,7 @@
     <div class="col-md-12 col-xl-12 form-group">
         <label class="form-label">{{label}}</label>
         <div class="input-group">
-            <div class="input-group-prepend" *ngIf="prefix">
+            <div class="input-group-prepend">
                 <span class="input-group-text">{{prefix}}</span>
             </div>
             <input class="form-control" type="text" [formControlName]="name" [placeholder]="label" (focus)="onFocus()"

@@ -16,6 +16,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
+import { TesteComponent } from './teste/teste.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
   ],
   declarations: [
     LayoutComponent,
+    TesteComponent
   ],
   exports: [
     LayoutComponent,
@@ -46,5 +48,7 @@ import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
     FormBuilder,
     HttpsRequestInterceptor,
   ],
+  exports: [
+    TesteComponent]
 })
 export class LayoutModule { }

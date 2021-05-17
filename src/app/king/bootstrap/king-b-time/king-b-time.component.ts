@@ -55,7 +55,13 @@ export class KingBTimeComponent implements OnInit {
   }
 
   change(event: any) {
-      this.timeEvent.emit(event);
+    let time = String(event.target.value).split(':');
+    let parsed: Array<any> = []
+    parsed[0] = parseInt(time[0]);
+    parsed[1] = parseInt(time[1]);
+    if ((parsed[0] >= 0 && parsed[0] < 24) && (parsed[1] >= 0 && parsed[1] < 60)) {
+      this.timeEvent.emit(time.join(':'));
+    }
   }
 
 }

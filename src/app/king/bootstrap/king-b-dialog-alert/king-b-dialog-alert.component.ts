@@ -31,8 +31,14 @@ export class KingBDialogAlertComponent implements OnInit {
   ngOnInit(): void {
     this.primaryColor = Colors.getColors().primaryColor;
     this.secondaryColor = Colors.getColors().separatorColor;
+  }
+
+  
+  ngAfterViewInit() {
     if (this.kingBDialogalert.observableCalled) {
+      debugger
       this.kingBDialogalert.observableCalled.subscribe((values: any) => {
+        debugger
         if (values != null && values != undefined) {
           this.type = values.type != null && values.type != undefined && values.type != '' ? this.type = values.type : 'default';
           if (isNullOrUndefined(values.title) || String(values.title).length <= 0) {

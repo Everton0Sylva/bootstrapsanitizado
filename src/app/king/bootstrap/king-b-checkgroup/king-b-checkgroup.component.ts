@@ -16,9 +16,6 @@ export class KingBCheckgroupComponent implements OnInit {
   error: string;
 
   @Input()
-  formulario: string;
-
-  @Input()
   form: any;
 
   @Input()
