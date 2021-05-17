@@ -1,14 +1,5 @@
 <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
     <div class="d-flex align-items-center justify-content-start col-md-12">
-        <h2 class="mr-3">{{ 'menu.'+currentRoute | translate }}</h2>
-
-        <ol class="breadcrumb p-0">
-            <li class="breadcrumb-item" *ngFor="let sub of pathArr; let i=index" [hidden]="i >= (pathArr.length-1)">
-                <a [routerLink]="[getUrl(sub)]" [ngSwitch]="sub == 'web'">
-                    <i class="fab fa-fort-awesome text-muted" *ngSwitchCase="true"></i>
-                    <label *ngSwitchCase="false">{{'menu.'+sub | translate}}</label></a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">{{ 'menu.'+currentRoute | translate }}</li>
-        </ol>
+        <h4 class="mr-3">{{ currentRoute + '.title' | translate }}</h4>
     </div>
 </nav>
