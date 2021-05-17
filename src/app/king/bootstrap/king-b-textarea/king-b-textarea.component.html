@@ -5,8 +5,8 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">{{prefix}}</span>
             </div>
-            <textarea class="form-control" type="text" [formControlName]="name" [placeholder]="label" (focus)="onFocus()" (blur)="onBlur()"
-                (change)="change($event)"></textarea>
+            <textarea class="form-control" type="text" [formControlName]="name" [placeholder]="label" (focus)="onFocus()" (blur)="onBlur($event)"
+                (onChange)="change($event)"></textarea>
             <div class="input-group-append">
                 <div class="input-group-text d-flex align-items-center"><i [class]="icon"></i>
                 </div>

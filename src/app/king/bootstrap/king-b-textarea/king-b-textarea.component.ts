@@ -35,27 +35,23 @@ export class KingBTextareaComponent implements OnInit {
 
 
   ngOnInit() {
-    this.form
-    this.error
-    this.name
-    // debugger
-
   }
 
-  onFocus(){
+  onFocus() {
     this.isInvalidField = false;
   }
 
-  onBlur() {
+  onBlur(evt) {
     let t = this.form.controls[this.name].status
     if (t.indexOf('INVA') >= 0) {
       this.isInvalidField = true;
-    } else{
+    } else {
       this.isInvalidField = false;
+      this.change(evt)
     }
   }
 
   change(event: any) {
-    this.textAreaEvent.emit(event);
+    this.textAreaEvent.emit(event.target.value);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { isNullOrUndefined } from '@swimlane/ngx-datatable';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
@@ -26,13 +27,32 @@ export class KingBConsultaComponent implements OnInit {
   @Input()
   icon: string;
 
+  @Input()
+  service: any;
 
   @Input()
   set setOpts(value: any) {
-    value.forEach((element: any) => {
-      let nValue = element.toLowerCase().replace(' ', '')
-      this.dataItens.push(element)
-    });
+    let self = this;
+    if (Array.isArray(value)) {
+      value.forEach((element: any) => {
+        let nValue = element.toLowerCase().replace(' ', '')
+        self.dataItens.push(element)
+      });
+    } else {
+      value.genericGet()
+        .then((data: any) => {
+          if (Array.isArray(data)) {
+            data.map((item: any) => {
+              let newItem: any;
+              newItem = isNullOrUndefined(item.name) ? item.id : item.name
+
+              self.dataItens.push(newItem);
+            });
+          }
+        }).catch((error: any) => {
+          console.log(error);
+        })
+    }
   }
 
   @Output()
@@ -56,12 +76,12 @@ export class KingBConsultaComponent implements OnInit {
   ngOnInit() {
   }
 
-  onFocus(){
+  onFocus() {
     this.isInvalidField = false;
   }
 
   onBlur() {
-    let t = this.form.controls[this.name].status    
+    let t = this.form.controls[this.name].status
     if (t.indexOf('INVA') >= 0) {
       this.isInvalidField = true;
     } else {
@@ -73,4 +93,5 @@ export class KingBConsultaComponent implements OnInit {
   change(event: any) {
     this.filterEvent.emit(event);
   }
+
 }

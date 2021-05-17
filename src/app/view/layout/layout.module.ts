@@ -17,6 +17,7 @@ import { LayoutRoutingModule } from './layout.routing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
+import { TesteComponent } from './teste/teste.component';
 
 @NgModule({
   imports: [
@@ -32,10 +33,11 @@ import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
     NgxMaskModule.forRoot(),
     TranslateModule,
     NgxDatatableModule,
-    kingBModule
+    kingBModule,
   ],
   declarations: [
     LayoutComponent,
+    TesteComponent
   ],
   providers: [{
     provide: LocationStrategy,
@@ -46,5 +48,7 @@ import { kingBModule } from 'src/app/king/bootstrap/king-b.module';
     FormBuilder,
     HttpsRequestInterceptor
   ],
+  exports: [
+    TesteComponent]
 })
 export class LayoutModule { }

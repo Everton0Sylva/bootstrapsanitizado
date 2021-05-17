@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
 //BOOTSTRAP
 import { KingBTelefoneComponent } from './king-b-telefone/king-b-telefone.component';
 import { KingBTextComponent } from './king-b-text/king-b-text.component';
@@ -21,7 +22,10 @@ import { KingBDataHoraComponent } from './king-b-data-hora/king-b-data-hora.comp
 import { KingBCheckboxComponent } from './king-b-checkbox/king-b-checkbox.component';
 import { KingBCheckgroupComponent } from './king-b-checkgroup/king-b-checkgroup.component';
 import { KingBDateComponent } from './king-b-date/king-b-date.component';
-//import { AgmCoreModule } from '@agm/core';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { KingBDialogAlertComponent } from './king-b-dialog-alert/king-b-dialog-alert.component';
+import { KingBSeparatorComponent } from './king-b-dialog-alert/king-b-separator/king-b-separator.component';
+import { KingBDialogalertService } from './king-b-dialog-alert/king-b-dialogalert.service';
 
 @NgModule({
     imports: [
@@ -29,15 +33,14 @@ import { KingBDateComponent } from './king-b-date/king-b-date.component';
         CommonModule,
         ReactiveFormsModule,
         FormsModule,
-        ReactiveFormsModule,
         ButtonsModule,
         BsDatepickerModule.forRoot(),
         TimepickerModule.forRoot(),
         NgbModule,
-        /* AgmCoreModule.forRoot({
-             apiKey: 'AIzaSyDnWKnvjVbVV6_zCsZ8srbG1Z1uuBmCTB4'
-         })
-         */
+        ModalModule.forRoot(),
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDnWKnvjVbVV6_zCsZ8srbG1Z1uuBmCTB4'
+        })
     ],
     declarations: [
         KingBTelefoneComponent,
@@ -55,9 +58,10 @@ import { KingBDateComponent } from './king-b-date/king-b-date.component';
         KingBDataHoraComponent,
         KingBCheckboxComponent,
         KingBCheckgroupComponent,
+        KingBDialogAlertComponent,
+        KingBSeparatorComponent,
     ],
     exports: [
-
         KingBTelefoneComponent,
         KingBTextComponent,
         KingBSenhaComponent,
@@ -72,7 +76,12 @@ import { KingBDateComponent } from './king-b-date/king-b-date.component';
         KingBConsultaComponent,
         KingBDataHoraComponent,
         KingBCheckboxComponent,
-        KingBCheckgroupComponent
+        KingBCheckgroupComponent,
+        KingBDialogAlertComponent,
+    ],
+
+    providers: [
+        KingBDialogalertService
     ],
 
 })

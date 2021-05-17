@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'angular2-toaster';
-import { KingBDialogalertService } from './king-b-dialog-alert/king-b-dialogalert.service';
+import { KingBDialogalertService } from 'src/app/king/bootstrap/king-b-dialog-alert/king-b-dialogalert.service';
 
 @Component({
   selector: 'teste-app',
