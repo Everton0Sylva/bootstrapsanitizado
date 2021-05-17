@@ -82,8 +82,7 @@ import { KingBDialogalertService } from './king-b-dialog-alert/king-b-dialogaler
 
     providers: [
         KingBDialogalertService
-    ],
-    providers: [KingBDialogalertService]
+    ]
 
 })
 export class kingBModule { }

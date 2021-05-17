@@ -20,8 +20,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.translateService.setTranslation('pt-BR', pt);
     this.translateService.setDefaultLang('pt-BR');
     this.translateService.use('pt-BR');
-
-    this.router.navigateByUrl('/web/t');
   }
   //vien-themecolor
   ngAfterViewInit() {

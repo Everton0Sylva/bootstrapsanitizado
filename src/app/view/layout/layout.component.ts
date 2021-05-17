@@ -11,6 +11,5 @@ export class LayoutComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.router.navigate['/web/t'];
   }
 }
