@@ -21,6 +21,8 @@ import { KingBDataHoraComponent } from './king-b-data-hora/king-b-data-hora.comp
 import { KingBCheckboxComponent } from './king-b-checkbox/king-b-checkbox.component';
 import { KingBCheckgroupComponent } from './king-b-checkgroup/king-b-checkgroup.component';
 import { KingBDateComponent } from './king-b-date/king-b-date.component';
+import { KingBDialogalertService } from './king-b-dialog-alert/king-b-dialogalert.service';
+import { KingBDialogAlertComponent } from './king-b-dialog-alert/king-b-dialog-alert.component';
 //import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -55,6 +57,7 @@ import { KingBDateComponent } from './king-b-date/king-b-date.component';
         KingBDataHoraComponent,
         KingBCheckboxComponent,
         KingBCheckgroupComponent,
+        KingBDialogAlertComponent
     ],
     exports: [
 
@@ -72,8 +75,10 @@ import { KingBDateComponent } from './king-b-date/king-b-date.component';
         KingBConsultaComponent,
         KingBDataHoraComponent,
         KingBCheckboxComponent,
-        KingBCheckgroupComponent
+        KingBCheckgroupComponent,
+        KingBDialogAlertComponent
     ],
+    providers: [KingBDialogalertService]
 
 })
 export class kingBModule { }
