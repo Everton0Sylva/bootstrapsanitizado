@@ -1,5 +1,5 @@
 <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
     <div class="d-flex align-items-center justify-content-start col-md-12">
-        <h4 class="mr-3">{{ currentRoute + '.title' | translate }}</h4>
+        <h4 *ngIf="currentRoute != 'home'" class="mr-3">{{ currentRoute + '.title' | translate }}</h4>
     </div>
 </nav>

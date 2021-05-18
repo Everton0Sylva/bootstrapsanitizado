@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'user', loadChildren: () => import('./view/user/user.module').then(m => m.UserModule) },
   { path: 'error', component: ErrorComponent },
   { path: '404', redirectTo: '/user/login' },
-  { path: '**', redirectTo: '/web/t' }
+  { path: '**', redirectTo: '/web/home' }
 ];
 
 @NgModule({
