@@ -8,17 +8,14 @@ export class KingBDialogalertService {
   }
 
   private kingBDialogAlertCall = new Subject<any>()
-  private kingBDialogAlertReturn = new Subject<any>()
 
   observableCalled = this.kingBDialogAlertCall.asObservable();
-  returnCalled = this.kingBDialogAlertCall.asObservable();
 
   showKingDialog(type, title, message): Promise<boolean> {
     return new Promise((resolve) => {
       this.kingBDialogAlertCall.next({ type, title, message });
-      this.returnCalled.subscribe((event) => {
+      this.observableCalled.subscribe((event) => {
         if (event == null || event == undefined) {
-          debugger
           resolve(true);
         }
       })
@@ -26,7 +23,7 @@ export class KingBDialogalertService {
   }
 
   onDialogReturn() {
-    this.kingBDialogAlertReturn.next();
+    this.kingBDialogAlertCall.next();
   }
 
 }
