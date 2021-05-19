@@ -1,5 +1,5 @@
 {
-  "name": "vien-angular-start",
+  "name": "gt-vien-angular",
   "version": "1.0.2",
   "scripts": {
     "ng": "ng",
@@ -16,7 +16,7 @@
     "@angular/cdk": "^9.1.0",
     "@angular/common": "~9.0.0",
     "@angular/compiler": "~9.0.0",
-    "@angular/core": "9.0.3",
+    "@angular/core": "9.0.7",
     "@angular/fire": "^5.4.2",
     "@angular/forms": "~9.0.0",
     "@angular/localize": "^11.2.7",
@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.1",
-    "@angular/cli": "~9.0.3",
+    "@angular/cli": "~9.0.7",
     "@angular/compiler-cli": "~9.0.0",
     "@angular/language-service": "~9.0.0",
     "@fortawesome/fontawesome-free": "^5.15.3",
